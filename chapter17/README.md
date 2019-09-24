@@ -78,7 +78,9 @@
     4. Only published blog posts return content to print, so unapproved posts can't accidentally be published.
 
 ### Defining Post and Creating a New Instance in the Draft State
+see listing 17-12
 ### Storing the Text of the Post Content 
+see listing 17-13
 ### Ensuring the Content of a Draft Post Is Empty 
 ### Requesting a Review of the Post Changes Its State
 - Example code 
