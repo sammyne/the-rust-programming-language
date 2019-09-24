@@ -71,7 +71,7 @@
   - Crux: A value has some internal state, which is represented by a set of *state objects*, and the value's behavior changes based on the internal state
   - Each state object is responsible for its own behavior and for governing when it should change into another state
   - The value that holds a state object knows nothing about the different behavior of the states or when to transition between states.
-- A demo blog as 
+- A demo blog as (prototype codes as [blog](./blog/src/bin/main.rs))
     1. A blog post starts as an empty draft.
     2. When the draft is done, a review of the post is requested.
     3. When the post is approved, it gets published.
