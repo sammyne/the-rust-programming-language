@@ -22,7 +22,7 @@ impl Post {
     }
 
     pub fn content(&self) -> &str {
-        ""
+        self.state.as_ref().unwrap().content(&self)
     }
 
     pub fn request_review(&mut self) {
