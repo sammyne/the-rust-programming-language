@@ -35,6 +35,7 @@
 - **HOW**: We create a trait object by specifying some sort of pointer, such as a `&` reference or a `Box<T>` smart pointer, then the `dyn` keyword, and then specifying the relevant trait
 - Restriction: trait object can hold no data
 - A **generic type parameter** can only be substituted with one concrete type at a time, whereas **trait objects** allow for multiple concrete types to fill in for the trait object at runtime
+- Example as [`Draw`](./gui/src/main.rs)
 
 ### Implementing the Trait 
 > Being concerned only with the messages a value responds to rather than the value's concrete type -— is similar to the concept duck typing in dynamically typed languages
