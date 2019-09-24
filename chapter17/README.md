@@ -12,6 +12,7 @@
   - The only way to interact with an object is through its public API
   - Code using the object shouldn't be able to reach into the object's internals and change data or behavior directly
 - Rust achieves encapsulation
+- Example as [averaged-collection](./averaged-collection/src/lib.rs)
 
 ### Inheritance as a Type System and as Code Sharing 
 - **WHAT**: A mechanism whereby an object can inherit from another object's definition, thus gaining the parent object's data and behavior without you having to define them again
