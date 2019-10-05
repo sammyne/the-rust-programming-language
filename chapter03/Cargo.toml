@@ -1,3 +1,3 @@
 [workspace]
-members = ["arrays","functions","variables"]
-default-members = ["arrays","functions","variables"]
+members = ["arrays","branches","functions","variables"]
+default-members = ["arrays","branches","functions","variables"]
