@@ -1,0 +1,3 @@
+[workspace]
+members = ["variables"]
+default-members = ["variables"]
