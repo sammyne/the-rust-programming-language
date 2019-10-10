@@ -1,2 +1,2 @@
 [workspace]
-members = ["ownership-and-functions", "04", "_05"]
+members = ["ownership-and-functions", "04", "_05", "_06"]
