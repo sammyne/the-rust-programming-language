@@ -1,2 +1,2 @@
 [workspace]
-members = ["ownership-and-functions", "04", "_05", "_06", "_07", "string-slices"]
+members = ["_03", "_04", "_05", "_06", "_07", "string-slices"]
