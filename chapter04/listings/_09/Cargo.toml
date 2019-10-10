@@ -1,0 +1,10 @@
+[package]
+name = "_09"
+version = "0.1.0"
+authors = ["Sammy <lixiangmin01@baidu.com>"]
+edition = "2018"
+description = "Listing 4-9: Improving the first_word function by using a string slice for the type of the s parameter"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
