@@ -88,16 +88,19 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
 ### Default Implementations 
 - Why: offering default implementations in trait makes it optional to override if we're comfortable with the default one
 - Example as [Listing 10-14: Definition of a Summary trait with a default implementation of the summarize method](./listings/_14/src/main.rs)
+- Default implementations can call other methods in the same trait, even if those other methods don’t have a default implementation
+    - Example as [Listing 10-14-2](./listings/_14_2/src/main.rs)
 - Restriction: it is impossible to call the default implementation from an overriding implementation of that same method
 ### Traits as Parameters 
 
 - Example 
-```rust
-// notify demonstrates the impl Trait syntax, which specifies the item accepts any type that implements the Summary trait
-pub fn notify(item: impl Summary) {
-    println!("Breaking news! {}", item.summarize());
-}
-```
+    ```rust
+    // notify demonstrates the impl Trait syntax, which specifies the item accepts any type that 
+    // implements the Summary trait
+    pub fn notify(item: impl Summary) {
+        println!("Breaking news! {}", item.summarize());
+    }
+    ```
 
 #### Trait Bound Syntax
 - The impl Trait syntax is actually syntax sugar for a longer form called *trait bound* like this
@@ -153,50 +156,25 @@ fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
     }
     ```
 - Failed for
-```rust
-fn returns_summarizable(switch: bool) -> impl Summary {
-    if switch {
-        NewsArticle {
-            ...
-        }
-    } else {
-        Tweet {
-            ...
+    ```rust
+    fn returns_summarizable(switch: bool) -> impl Summary {
+        if switch {
+            NewsArticle {
+                ...
+            }
+        } else {
+            Tweet {
+                ...
+            }
         }
     }
-}
-```
+    ```
 
 ### Fixing the `largest` Function with Trait Bounds
 - Cause
   - Types like `i32` and `char` that have a known size can be stored on the stack, so they implement the `Copy` trait
   - When we made the largest function generic, it became possible for the list parameter to have types in it that don't implement the `Copy` trait
-- Fix as
-    ```rust
-    fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
-        let mut largest = list[0];
-
-        for &item in list.iter() {
-            if item > largest {
-                largest = item;
-            }
-        }
-
-        largest
-    }
-
-    fn main() {
-        let number_list = vec![34, 50, 25, 100, 65];
-
-        let result = largest(&number_list);
-        println!("The largest number is {}", result);
-
-        let char_list = vec!['y', 'm', 'a', 'q'];
-
-        let result = largest(&char_list);
-        println!("The largest char is {}", result);
-    }
-    ```
+- Fix as [Listing 10-15: A working definition of the largest function that works on any generic type that implements the PartialOrd and Copy traits](./listings/_15/src/main.rs)
 - Alternative solutions
   - Replace `Copy` with `Clone`, which would iccur more heap allocations
   - Return a reference to a `T` value in the slice
