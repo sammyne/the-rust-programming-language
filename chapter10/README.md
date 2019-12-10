@@ -56,10 +56,12 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
 
 ### Performance of Code Using Generics 
 - No penalty w.r.t that with concrete types
-- Rust accomplishes this by performing *monomorphization* of the code that is using generics **at compile time**. Monomorphization is the process of turning generic code into specific code by filling in the concrete types that are used when compiled.
+- Rust accomplishes this by performing *monomorphization* of the code that is using generics **at compile time**
+  - Monomorphization is the process of turning generic code into specific code by filling in the concrete types that are used when compiled.
 
 ## Traits: Defining Shared Behavior 
-- A trait tells the Rust compiler about functionality a particular type has and can share with other types - We can use trait bounds to specify that a generic can be any type that has certain behavior
+- A trait tells the Rust compiler about functionality a particular type has and can share with other types 
+- We can use trait bounds to specify that a generic can be any type that has certain behavior
 
 > Traits are similar to a feature often called interfaces in other languages, although with some differences
 
@@ -67,101 +69,25 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
 - Trait definitions are a way to group method signatures together to define a set of behaviors necessary to accomplish some purpose
 - Example 
     ```rust
-    // Summary is a media aggregator library that can display summaries of data that might be stored in a NewsArticle or Tweet instance
+    // Listing 10-12: A Summary trait that consists of the behavior provided by a summarize method
+    // Summary is a media aggregator library that can display summaries of data that might be stored
+    // in a NewsArticle or Tweet instance
     pub trait Summary {
         fn summarize(&self) -> String;
     }
     ```
-- A trait can have multiple methods in its body: the method signatures are listed one per line and each line ends in a semicolon
+- A trait can have multiple methods in its body 
+  - The method signatures are listed one per line 
+  - Each line ends in a semicolon
+
 ### Implementing a Trait on a Type
-- Example 
-    ```rust
-    pub trait Summary {
-        fn summarize(&self) -> String;
-    }
-
-    pub struct NewsArticle {
-        pub headline: String,
-        pub location: String,
-        pub author: String,
-        pub content: String,
-    }
-
-    // Implementing a trait on a type is similar to implementing regular methods.
-    // The difference is that after `impl`, we
-    //  1. put the trait name that we want to implement
-    //  2. then use the `for` keyword,
-    //  3. then specify the name of the type we want to implement the trait for
-    impl Summary for NewsArticle {
-        fn summarize(&self) -> String {
-            format!("{}, by {} ({})", self.headline, self.author, self.location)
-        }
-    }
-
-    pub struct Tweet {
-        pub username: String,
-        pub content: String,
-        pub reply: bool,
-        pub retweet: bool,
-    }
-
-    impl Summary for Tweet {
-        fn summarize(&self) -> String {
-            format!("{}: {}", self.username, self.content)
-        }
-    }
-
-    fn main() {
-        let tweet = Tweet {
-            username: String::from("horse_ebooks"),
-            content: String::from("of course, as you probably already know, people"),
-            reply: false,
-            retweet: false,
-        };
-
-        println!("1 new tweet: {}", tweet.summarize());
-    }
-    ```
+- Example as [Listing 10-13: Implementing the Summary trait on the NewsArticle and Tweet types](./listings/_13/src/main.rs)
 - One restriction 
   - A trait can be implemented on a type **only if either the trait or the type is local to our crate**
-    > This restriction is part of a property of programs called **coherence** (a.k.a. **the orphan rule**), which ensures that other people's code can't break your code and vice versa
+    > This restriction is part of a property of programs called **coherence** (a.k.a. **the orphan rule**), which ensures that other people's code can't break your code and vice versa. Without the rule, two crates could implement the same trait for the same type, and Rust wouldn’t know which implementation to use
 ### Default Implementations 
 - Why: offering default implementations in trait makes it optional to override if we're comfortable with the default one
-- Example 
-    ```rust
-    pub trait Summary {
-        fn summarize(&self) -> String {
-            String::from("(Read more...)")
-        }
-    }
-
-    pub struct NewsArticle {
-        pub headline: String,
-        pub location: String,
-        pub author: String,
-        pub content: String,
-    }
-
-    impl Summary for NewsArticle {
-    }
-
-    fn main() {
-        let article = NewsArticle {
-            headline: String::from("Penguins win the Stanley Cup Championship!"),
-            location: String::from("Pittsburgh, PA, USA"),
-            author: String::from("Iceburgh"),
-            content: String::from(
-                "The Pittsburgh Penguins once again are the best
-    hockey team in the NHL.",
-            ),
-        };
-
-        println!("New article available! {}", article.summarize());
-
-        // Output:
-        // New article available! (Read more...)
-    }
-    ```
+- Example as [Listing 10-14: Definition of a Summary trait with a default implementation of the summarize method](./listings/_14/src/main.rs)
 - Restriction: it is impossible to call the default implementation from an overriding implementation of that same method
 ### Traits as Parameters 
 
