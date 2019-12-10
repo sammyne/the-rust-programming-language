@@ -274,10 +274,11 @@ fn longest<'a>(x: &str, y: &str) -> &'a str {
 - Example as [Listing 10-25: A struct that holds a reference, so its definition needs a lifetime annotation](./listings/_25/src/main.rs)
 
 ### Lifetime Elision 
+- Example as [Listing 10-26: A function we defined in Listing 4-9 that compiled without lifetime annotations, even though the parameter and return type are references](./listings/_26/src/lib.rs)
 - **WHAT**: the patterns programmed into Rust's analysis of references
     > They're a set of particular cases that the compiler will consider, and if your code fits these cases, you don't need to write the lifetimes explicitly
 - The elision rules don't provide full inference. If with all rules applied still produces ambiguity as to what lifetimes the references have, the compiler would just error out 
-- Lifetimes on function or method parameters are called input lifetimes, and lifetimes on return values are called output lifetimes
+- Lifetimes on function or method parameters are called **input lifetimes**, and lifetimes on return values are called **output lifetimes**
 - The compiler uses three rules to figure out what lifetimes references have when there aren't explicit annotations
     1. Each parameter that is a reference gets its own lifetime parameter
         ```rust
