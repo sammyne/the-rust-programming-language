@@ -252,28 +252,8 @@ fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
 - When a function has references to or from code outside that function, it becomes almost impossible for Rust to figure out the lifetimes of the parameters or return values on its own. The lifetimes might be different each time the function is called. This is why we need to annotate the lifetimes manually
 - Examples
     - [Listing 10-23: Using the longest function with references to String values that have different concrete lifetimes](./listings/_23/src/main.rs)
-    ```rust
-    fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
-        if x.len() > y.len() {
-            x
-        } else {
-            y
-        }
-    }
+    - [Listing 10-24: Attempting to use result after string2 has gone out of scope](./listings/_24/src/main.rs)
 
-    // not ok
-    fn main() {
-        let string1 = String::from("long string is long");
-        let result;
-
-        {
-            let string2 = String::from("xyz");
-            result = longest(string1.as_str(), string2.as_str());
-        }
-
-        println!("The longest string is {}", result);
-    }
-    ```
 ### Thinking in Terms of Lifetimes 
 ```rust
 // ok
