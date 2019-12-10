@@ -267,24 +267,11 @@ fn longest<'a>(x: &str, y: &str) -> &'a str {
     result.as_str()
 }
 ```
+- Lifetime syntax is about connecting the lifetimes of various parameters and return values of functions
+
 ### Lifetime Annotations in Struct Definitions
 - It's possible for structs to hold references, but in that case we would need to add a lifetime annotation on every reference in the struct's definition
-
-- Example 
-    ```rust
-    struct ImportantExcerpt<'a> {
-        part: &'a str,
-    }
-
-    fn main() {
-        let novel = String::from("Call me Ishmael. Some years ago...");
-        let first_sentence = novel.split('.').next().expect("Could not find a '.'");
-
-        let i = ImportantExcerpt {
-            part: first_sentence,
-        };
-    }
-    ```
+- Example as [Listing 10-25: A struct that holds a reference, so its definition needs a lifetime annotation](./listings/_25/src/main.rs)
 
 ### Lifetime Elision 
 - **WHAT**: the patterns programmed into Rust's analysis of references
