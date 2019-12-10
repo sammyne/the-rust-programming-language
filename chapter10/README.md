@@ -18,28 +18,8 @@
 - Example with generic：[Listing 10-5: A definition of the largest function that uses generic type parameters but doesn’t compile yet](listings/_05/src/main.rs)
 
 ### In Struct Definitions 
-```rust
-// declare the name of the type parameter inside angle brackets
-// just after the name of the struct
-// @note x and y must be of the same type
-struct Point<T> {
-    x: T,
-    y: T,
-}
 
-// Point with x and y of different types
-struct PointV2<T, U> {
-    x: T,
-    y: U,
-}
-
-fn main() {
-    let integer = Point { x: 5, y: 10 };
-    let float = Point { x: 1.0, y: 4.0 };
-
-    let integer_and_float = PointV2 { x: 5, y: 4.0 };
-}
-```
+Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
 
 > When you need lots of generic types in your code, it could indicate that your code needs restructuring into smaller pieces
 
