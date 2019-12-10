@@ -247,19 +247,7 @@ fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
     &'a mut i32 // a mutable reference with an explicit lifetime
     ```
 ### Lifetime Annotations in Function Signatures
-- Example 
-    ```rust
-    // @note declare generic lifetime parameters inside angle brackets between the function name and the parameter list
-    // @dev The constraint we want to express in this signature is that all the references in the parameters and the return value must have the same lifetime
-    // @dev the lifetime of the returned value will be the overlapping scope of x and y
-    fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
-        if x.len() > y.len() {
-            x
-        } else {
-            y
-        }
-    }
-    ```
+- Example as [Listing 10-22: The longest function definition specifying that all the references in the signature must have the same lifetime 'a](./listings/_22/src/lib.rs)
 - When annotating lifetimes in functions, the annotations go in the function signature, not in the function body. Rust can analyze the code within the function without any help
 - When a function has references to or from code outside that function, it becomes almost impossible for Rust to figure out the lifetimes of the parameters or return values on its own. The lifetimes might be different each time the function is called. This is why we need to annotate the lifetimes manually
 - Examples
