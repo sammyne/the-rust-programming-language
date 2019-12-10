@@ -31,6 +31,7 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
         None,
     }
 
+    // Enums can use multiple generic types as well
     enum Result<T, E> {
         Ok(T),
         Err(E),
@@ -40,26 +41,7 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
 > When you recognize situations in your code with multiple struct or enum definitions that differ only in the types of the values they hold, you can avoid duplication by using generic types instead
 
 ### In Method Definitions
-- Example 
-    ```rust
-    struct Point<T> {
-        x: T,
-        y: T,
-    }
-
-    // @note T must go just after impl so we can use it to specify that we're implementing methods on the type Point<T>
-    impl<T> Point<T> {
-        fn x(&self) -> &T {
-            &self.x
-        }
-    }
-
-    fn main() {
-        let p = Point { x: 5, y: 10 };
-
-        println!("p.x = {}", p.x());
-    }
-    ```
+- Example as [Listing 10-9: Implementing a method named x on the Point<T> struct that will return areference to the x field of type T](./listings/_09/src/main.rs)
 - Example of implement methods only on `Point<f32>` instances rather than on `Point<T>` instances with any generic type
     ```rust
     impl Point<f32> {
