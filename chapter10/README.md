@@ -44,37 +44,15 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
 - Example as [Listing 10-9: Implementing a method named x on the Point<T> struct that will return areference to the x field of type T](./listings/_09/src/main.rs)
 - Example of implement methods only on `Point<f32>` instances rather than on `Point<T>` instances with any generic type
     ```rust
+    // Listing 10-10: An impl block that only applies to a struct with a particular concrete type
+    // for the generic type parameter T
     impl Point<f32> {
         fn distance_from_origin(&self) -> f32 {
             (self.x.powi(2) + self.y.powi(2)).sqrt()
         }
     }
     ```
-- Generic type parameters in a struct definition aren't always the same as those you use in that struct's method signatures
-    ```rust
-    struct Point<T, U> {
-        x: T,
-        y: U,
-    }
-
-    impl<T, U> Point<T, U> {
-        fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
-            Point {
-                x: self.x,
-                y: other.y,
-            }
-        }
-    }
-
-    fn main() {
-        let p1 = Point { x: 5, y: 10.4 };
-        let p2 = Point { x: "Hello", y: 'c' };
-
-        let p3 = p1.mixup(p2);
-
-        println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
-    }
-    ```
+- Generic type parameters in a struct definition aren't always the same as those you use in that struct's method signatures as [Listing 10-11: A method that uses different generic types than its struct’s definition](./listings/_11/src/main.rs)
 
 ### Performance of Code Using Generics 
 - No penalty w.r.t that with concrete types
