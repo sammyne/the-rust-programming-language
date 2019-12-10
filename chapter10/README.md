@@ -181,33 +181,26 @@ fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
 ### Using Trait Bounds to Conditionally Implement Methods
 - Example as [Listing 10-16: Conditionally implement methods on a generic type depending on trait bounds](listings/_16/src/main.rs)
 - Blanket implementations: implementating a trait on any type that satisfies the trait bounds
-```rust
-// std library
-impl<T: Display> ToString for T {
-    // --snip--
-}
-
-// which makes below possible 
-let s = 3.to_string();
-```
-## Validating References with Lifetimes 
-- Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred
-- **WHEN**: way, we must annotate lifetimes when the lifetimes of references could be related in a few different ways
-### Preventing Dangling References with Lifetimes
-- The main aim of lifetimes is to prevent dangling references, which cause a program to reference data other than the data it's intended to reference
-```rust
-// This code won't compile because the value r is referring to has gone out of scope before we try to use it.
-fn main() {
-    let r;
-
-    {
-        let x = 5;
-        r = &x;
+    ```rust
+    // std library
+    impl<T: Display> ToString for T {
+        // --snip--
     }
 
-    println!("r: {}", r);
-}
-```
+    // which makes below possible 
+    let s = 3.to_string();
+    ```
+- Traits and trait bounds let us write code that uses generic type parameters to reduce duplication but also specify to the compiler that we want the generic type to have particular behavior
+
+## Validating References with Lifetimes 
+- **WHAT**: the scope for which that reference is valid
+- Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred
+- **WHEN**: we must annotate lifetimes when the lifetimes of references could be related in a few different ways
+- Rust requires us to annotate the relationships using generic lifetime parameters to ensure the actual references used at runtime will definitely be valid
+### Preventing Dangling References with Lifetimes
+- The main aim of lifetimes is to prevent dangling references, which cause a program to reference data other than the data it's intended to reference
+    - Example as [Listing 10-17: An attempt to use a reference whose value has gone out of scope](./listings/_17/src/main.rs)
+- If we try to use a variable before giving it a value, we'll get a compile-time error, which shows that Rust indeed does not allow null values
 
 ### The Borrow Checker 
 - The Rust compiler has a borrow checker that compares scopes to determine whether all borrows are valid
@@ -228,6 +221,8 @@ fn main() {
         ```
     - Possible fix
         ```rust
+        // Listing 10-19: A valid reference because the data has a longer lifetime than the
+        // reference
         {
             let x = 5;              // ----------+-- 'b
                                     //           |
@@ -239,25 +234,8 @@ fn main() {
         ```
 
 ### Generic Lifetimes in Functions 
-- Non-compilable example
-```rust
-// longest failed because the borrow checker doesn’t know how the lifetimes of x and y relate to the lifetime of the return value
-fn longest(x: &str, y: &str) -> &str {
-    if x.len() > y.len() {
-        x
-    } else {
-        y
-    }
-}
+- Non-compilable example：[Listing 10-21: A main function that calls the longest function to find the longer of two string slices](listings/_20/src/main.rs)
 
-fn main() {
-    let string1 = String::from("abcd");
-    let string2 = "xyz";
-
-    let result = longest(string1.as_str(), string2);
-    println!("The longest string is {}", result);
-}
-```
 ### Lifetime Annotation Syntax 
 - Lifetime annotations don't change how long any of the references live
 - Lifetime annotations describe the relationships of the lifetimes of multiple references to each other without affecting the lifetimes
