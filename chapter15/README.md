@@ -89,12 +89,14 @@
 - The `Rc<T>` type keeps track of the number of references to a value which determines whether or not a value is still in use. If there are zero references to a value, the value can be cleaned up without any references becoming invalid
 - We use the `Rc<T>` type when we want to allocate some data on the heap for multiple parts of our program to read and we can’t determine at compile time which part will finish using the data last
 - `Rc<T>` is only for use in single-threaded scenarios
-- Examples
-  - [Listing 15-17: Demonstrating we’re not allowed to have two lists using Box<T> that try to share ownership of a third list](./listings/_17/src/main.rs)
 
 ### Using `Rc<T>` to Share Data
 - Every time we call `Rc::clone`, the reference count to the data within the `Rc<List>` will increase, and the data won’t be cleaned up unless there are zero references to it
 - We could have called `a.clone()` rather than `Rc::clone(&a)`, but Rust’s convention is to use `Rc::clone` in this case. The implementation of `Rc::clone` doesn’t make a deep copy of all the data like most types’ implementations of `clone` do. The call to `Rc::clone` only increments the reference count, which doesn’t take much time
+- Examples
+  - [Listing 15-17: Demonstrating we’re not allowed to have two lists using `Box<T>` that try to share ownership of a third list](./listings/_17/src/main.rs)
+  - [Listing 15-18: A definition of List that uses `Rc<T>`](./listings/_18/src/main.rs)
+
 
 ### Cloning an `Rc<T>` Increases the Reference Count
 - The `Rc::strong_count` function returns the reference count of `Rc<T>`
