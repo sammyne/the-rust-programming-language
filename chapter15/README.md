@@ -61,6 +61,7 @@
 - Deref coercion converts a reference to a type that implements `Deref` into a reference to a type that `Deref` can convert the original type into
 - Deref coercion happens automatically when we pass a reference to a particular type’s value as an argument to a function or method that doesn’t match the parameter type in the function or method definition
 - A sequence of calls to the `deref` method converts the type we provided into the type the parameter needs
+- Example as [Listing 15-12: Calling hello with a reference to a MyBox<String> value, which works because of deref coercion](listings/_11_12/src/main.rs)
 
 ### How Deref Coercion Interacts with Mutability
 - Rust does deref coercion when it finds types and trait implementations in three cases:
