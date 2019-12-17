@@ -167,3 +167,4 @@ structures so that some references express ownership and some references don’t
 - Example as [Listing 15-28: A `leaf` node with a weak reference to its parent node `branch`](./listings/_28/src/main.rs)
 
 #### Visualizing Changes to `strong_count` and `weak_count`
+- Example as [Listing 15-29: Creating branch in an inner scope and examining strong and weak reference counts](./listings/_29/src/main.rs)
