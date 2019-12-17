@@ -136,6 +136,7 @@ actions took place
 
 #### Keeping Track of Borrows at Runtime with `RefCell<T>`
 - `RefCell<T>` lets us have many immutable borrows or one mutable borrow at any point in time
+- Example as [Listing 15-23: Creating two mutable references in the same scope to see that RefCell<T> will panic](./listings/_23/src/main.rs)
 
 ### Having Multiple Owners of Mutable Data by Combining `Rc<T>` and `RefCell<T>`
 - If you have an `Rc<T>` that holds a `RefCell<T>`, you can get a value that can have multiple owners *and* that you can mutate
