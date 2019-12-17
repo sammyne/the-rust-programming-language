@@ -45,6 +45,10 @@
 - Example as [Listing 15-7: Using the dereference operator on a `Box<i32>`](./listings/_07/src/main.rs)
 
 ### Defining Our Own Smart Pointer
+- Examples as [customizing smart pointers without implementing `Deref` trait will error out](./listings/_08_09/src/main.rs)
+  - Listing 15-8: Defining a `MyBox<T>` type
+  - Listing 15-9: Attempting to use `MyBox<T>` in the same way we used references and `Box<T>`
+
 ### Treating a Type Like a Reference by Implementing the `Deref` Trait
 - The `Deref` trait, provided by the standard library, requires us to implement one method named `deref` that borrows `self` and returns a reference to the inner data
 - When we entered `*y` in Listing 15-9, behind the scenes Rust actually ran this code:
