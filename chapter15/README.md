@@ -101,6 +101,7 @@
 ### Cloning an `Rc<T>` Increases the Reference Count
 - The `Rc::strong_count` function returns the reference count of `Rc<T>`
 - Via immutable references, `Rc<T>` allows you to share data between multiple parts of your program for reading only
+- Example as [Listing 15-19: Printing the reference count](./listings/_19/src/main.rs)
 
 ## `RefCell<T>` and the Interior Mutability Pattern
 - *Interior mutability* is a design pattern in Rust that allows you to mutate data even when there are immutable references to that data
