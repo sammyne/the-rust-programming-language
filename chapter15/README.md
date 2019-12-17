@@ -39,7 +39,11 @@
 - Implementing the `Deref` trait allows you to customize the behavior of the *dereference operator*, `*`
 
 ### Following the Pointer to the Value with the Dereference Operator
+- Example as [Listing 15-6: Using the dereference operator to follow a reference to an i32 value](./listings/_06/src/main.rs)
+
 ### Using `Box<T>` Like a Reference
+- Example as [Listing 15-7: Using the dereference operator on a `Box<i32>`](./listings/_07/src/main.rs)
+
 ### Defining Our Own Smart Pointer
 ### Treating a Type Like a Reference by Implementing the `Deref` Trait
 - The `Deref` trait, provided by the standard library, requires us to implement one method named `deref` that borrows `self` and returns a reference to the inner data
