@@ -80,6 +80,7 @@
 ### Dropping a Value Early with `std::mem::drop`
 - Rust doesn’t let you call the `Drop` trait’s `drop` method manually
 - You have to call the `std::mem::drop` function provided by the standard library if you want to force a value to be dropped before the end of its scope
+    - Example as [Listing 15-16: Calling std::mem::drop to explicitly drop a value before it goes out of scope](./listings/_16/src/main.rs)
 - Rust doesn’t let us call `drop` explicitly because Rust would still automatically call `drop` on the value at the end of `main`. This would be a *double free* error because Rust would be trying to clean up the same value twice
     - Example as [Listing 15-15: Attempting to call the drop method from the Drop trait manually to clean up early](listings/_15/src/main.rs)
 - `std::mem::drop` is in the prelude
