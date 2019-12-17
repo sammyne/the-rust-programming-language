@@ -51,6 +51,7 @@
 
 ### Treating a Type Like a Reference by Implementing the `Deref` Trait
 - The `Deref` trait, provided by the standard library, requires us to implement one method named `deref` that borrows `self` and returns a reference to the inner data
+    - Example as [Listing 15-10: Implementing Deref on `MyBox<T>`](listings/_10/src/main.rs)
 - When we entered `*y` in Listing 15-9, behind the scenes Rust actually ran this code:
     ```rust,ignore
     *(y.deref())
