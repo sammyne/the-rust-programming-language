@@ -129,6 +129,10 @@
 another type during testing. *Mock objects* are specific types of test doubles
 that record what happens during a test so you can assert that the correct
 actions took place
+- Examples as [listing](./listings/_20/src/main.rs)
+  - Listing 15-20: A library to keep track of how close a value is to a maximum value and warn when the value is at certain levels
+  - Listing 15-21: An attempt to implement a MockMessenger that isn’t allowed by the borrow checker
+
 
 #### Keeping Track of Borrows at Runtime with `RefCell<T>`
 - `RefCell<T>` lets us have many immutable borrows or one mutable borrow at any point in time
