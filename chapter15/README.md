@@ -75,6 +75,7 @@
 - The `Drop` trait lets you customize what happens when a value is about to go out of scope
 - Specify the code to run when a value goes out of scope by implementing the `Drop` trait. The `Drop` trait requires you to implement one method named `drop` that takes a mutable reference to `self`
 - The `Drop` trait is included in the prelude, so we don’t need to bring it into scope
+- Example as [Listing 15-14: A CustomSmartPointer struct that implements the Drop trait where we would put our cleanup code](listings/_14/src/main.rs)
 
 ### Dropping a Value Early with `std::mem::drop`
 - Rust doesn’t let you call the `Drop` trait’s `drop` method manually
