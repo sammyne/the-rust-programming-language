@@ -164,4 +164,6 @@ structures so that some references express ownership and some references don’t
 - Example as [Listing 15-27: Creating a leaf node with no children and a branch node with leaf as one of its children](./listings/_27/src/main.rs)
 
 #### Adding a Reference from a Child to Its Parent
+- Example as [Listing 15-28: A `leaf` node with a weak reference to its parent node `branch`](./listings/_28/src/main.rs)
+
 #### Visualizing Changes to `strong_count` and `weak_count`
