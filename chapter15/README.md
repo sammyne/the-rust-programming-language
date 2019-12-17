@@ -151,8 +151,8 @@ actions took place
 - Another solution for avoiding reference cycles is reorganizing your data
 structures so that some references express ownership and some references don’t
 - Examples 
-  - [Listing 15-25: A cons list definition that holds a RefCell<T> so we can modify what a Cons variant is referring to](./listings/_25/src/main.rs)
-  - 
+  - [Listing 15-25: A cons list definition that holds a `RefCell<T>` so we can modify what a Cons variant is referring to](./listings/_25/src/main.rs)
+  - [Listing 15-26: Creating a reference cycle of two List values pointing to each other](./listings/_26/src/main.rs)
 
 ### Preventing Reference Cycles: Turning an `Rc<T>` into a `Weak<T>`
 - Create a *weak reference* to the value within an `Rc<T>` instance by calling `Rc::downgrade` and passing a reference to the `Rc<T>`. When you call `Rc::downgrade`, you get a smart pointer of type `Weak<T>`
