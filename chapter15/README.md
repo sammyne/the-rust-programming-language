@@ -141,6 +141,7 @@ actions took place
 ### Having Multiple Owners of Mutable Data by Combining `Rc<T>` and `RefCell<T>`
 - If you have an `Rc<T>` that holds a `RefCell<T>`, you can get a value that can have multiple owners *and* that you can mutate
 - Because `Rc<T>` holds only immutable values, we can’t change any of the values in the list once we’ve created them
+- Example as [Listing 15-24: Using `Rc<RefCell<i32>>` to create a List that we can mutate](./listings/_24/src/main.rs)
 
 ## Reference Cycles Can Leak Memory
 - Memory leaks are memory safe in Rust
