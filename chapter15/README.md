@@ -161,5 +161,7 @@ structures so that some references express ownership and some references don’t
 - You must make sure the value still exists. Do this by calling the `upgrade` method on a `Weak<T>` instance, which will return an `Option<Rc<T>>`. You’ll get a result of `Some` if the `Rc<T>` value has not been dropped yet and a result of `None` if the `Rc<T>` value has been dropped
 
 #### Creating a Tree Data Structure: a `Node` with Child Nodes
+- Example as [Listing 15-27: Creating a leaf node with no children and a branch node with leaf as one of its children](./listings/_27/src/main.rs)
+
 #### Adding a Reference from a Child to Its Parent
 #### Visualizing Changes to `strong_count` and `weak_count`
