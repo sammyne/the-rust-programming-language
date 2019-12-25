@@ -83,6 +83,7 @@ make an item like a function or struct private, you put it in a module
 function’s parent module into scope with `use` so we have to specify the parent
 module when calling the function makes it clear that the function isn’t locally
 defined while still minimizing repetition of the full path
+    -  Unidiomatic example as [Listing 7-13: Bringing the `add_to_waitlist` function into scope with `use`, which is unidiomatic](./listings/_13/src/lib.rs)
 - When bringing in structs, enums, and other items with `use`,
 it’s idiomatic to specify the full path
 - The exception to this idiom is if we’re bringing two items with the same name
