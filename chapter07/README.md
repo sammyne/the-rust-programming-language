@@ -137,3 +137,6 @@ don’t need to change *Cargo.toml* to include `std`
 - Using a semicolon after `mod front_of_house` rather than using a block tells
 Rust to load the contents of the module from another file with the same name as
 the module
+- [Example v1](./listings/_21_22/src/lib.rs) 
+  - Listing 7-21: Declaring the `front_of_house` module whose body will be in *src/front_of_house.rs*
+  - Listing 7-22: Definitions inside the `front_of_house` module in *src/front_of_house.rs*
