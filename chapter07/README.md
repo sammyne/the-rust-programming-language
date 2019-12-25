@@ -58,7 +58,8 @@ make an item like a function or struct private, you put it in a module
 
 ### Exposing Paths with the `pub` Keyword
 - Making the module public doesn’t make its contents public
-- Example as [Listing 7-5: Declaring the `hosting` module as `pub` to use it from `eat_at_restaurant`](./listings/_05/src/lib.rs)
+  - Example as [Listing 7-5: Declaring the `hosting` module as `pub` to use it from `eat_at_restaurant`](./listings/_05/src/lib.rs)
+- Ok example as [Listing 7-7: Adding the `pub` keyword to `mod hosting` and `fn add_to_waitlist` lets us call the function from `eat_at_restaurant`](./listings/_07/src/lib.rs)
 
 ### Starting Relative Paths with `super`
 - Construct relative paths that begin in the parent module by using `super` at the start of the path
