@@ -129,6 +129,7 @@ don’t need to change *Cargo.toml* to include `std`
 
 ### The Glob Operator
 - WHY: bring *all* public items defined in a path into scope
+- Example: `use std::collections::*;`
 - The glob operator is often used when testing to bring everything under test into the `tests` module
 - The glob operator is also sometimes used as part of the prelude pattern 
 
