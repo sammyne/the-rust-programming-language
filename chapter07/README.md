@@ -87,6 +87,7 @@ defined while still minimizing repetition of the full path
 - When bringing in structs, enums, and other items with `use`, it’s idiomatic to specify the full path
     - Example as [Listing 7-14: Bringing `HashMap` into scope in an idiomatic way](./listings/_14/src/main.rs)
 - The exception to this idiom is if we’re bringing two items with the same name into scope with `use` statements, because Rust doesn’t allow that
+    - Example as [Listing 7-15: Bringing two types with the same name into the same scope requires using their parent modules](./listings/_15/src/lib.rs)
 
 ### Providing New Names with the `as` Keyword
 
