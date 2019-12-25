@@ -98,6 +98,7 @@ the new scope is private
 - With `pub use`, we can write our code with one structure but expose a different
 structure. Doing so makes our library well organized for programmers working on
 the library and programmers calling the library
+- Example as [Listing 7-17: Making a name available for any code to use from a new scope with `pub use`](./listings/_17/src/lib.rs)
 
 ### Using External Packages
 - The standard library (`std`) is also a crate that’s external to our
