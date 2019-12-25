@@ -33,12 +33,7 @@ easy reuse. Modules also control the *privacy* of items, which is whether an
 item can be used by outside code (*public*) or is an internal implementation
 detail and not available for outside use (*private*)
 - Example: a library crate that provides the functionality of a restaurant
-    - L1: define a module by starting with the `mod` keyword and then specify the
-name of the module (in this case, `front_of_house`) and place curly brackets
-around the body of the module. Inside modules, we can have other modules, as in
-this case with the modules `hosting` and `serving`. Modules can also hold
-definitions for other items, such as structs, enums, constants, traits, or—as
-in Listing 7-1—functions
+    - [Listing 7-1: A front_of_house module containing other modules that then contain functions](listings/_01/src/lib.rs)
 - *src/main.rs* and *src/lib.rs* are called crate
 roots. The reason for their name is that the contents of either of these two
 files form a module named `crate` at the root of the crate’s module structure,
