@@ -90,6 +90,7 @@ defined while still minimizing repetition of the full path
     - Example as [Listing 7-15: Bringing two types with the same name into the same scope requires using their parent modules](./listings/_15/src/lib.rs)
 
 ### Providing New Names with the `as` Keyword
+- Example as [Listing 7-16: Renaming a type when it’s brought into scope with the `as` keyword](./listings/_16/src/lib.rs)
 
 ### Re-exporting Names with `pub use`
 - When we bring a name into scope with the `use` keyword, the name available in
