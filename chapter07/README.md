@@ -101,12 +101,31 @@ the library and programmers calling the library
 - Example as [Listing 7-17: Making a name available for any code to use from a new scope with `pub use`](./listings/_17/src/lib.rs)
 
 ### Using External Packages
+- Example as [external_pkg](./listings/external_pkg/src/main.rs)
 - The standard library (`std`) is also a crate that’s external to our
 package. Because the standard library is shipped with the Rust language, we
 don’t need to change *Cargo.toml* to include `std`
 
 ### Using Nested Paths to Clean Up Large `use` Lists
 - HOW: Specify the common part of the path, followed by two colons, and then curly brackets around a list of the parts of the paths that differ
+- Example1
+    ```rust
+    // full
+    use std::io;
+    use std::cmp::Ordering;
+
+    // simplified
+    use std::{io, cmp::Ordering};
+    ```
+- Example2
+    ```rust
+    // full
+    use std::io;
+    use std::io::Write;
+
+    // simplified
+    use std::io::{self, Write};
+    ```
 
 ### The Glob Operator
 - WHY: bring *all* public items defined in a path into scope
