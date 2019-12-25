@@ -74,6 +74,7 @@ make an item like a function or struct private, you put it in a module
 
 ## Bringing Paths into Scope with the `use` Keyword
 - Adding `use` and a path in a scope is similar to creating a symbolic link in the filesystem
+    - Example as [Listing 7-11: Bringing a module into scope with `use`](./listings/_11/src/lib.rs)
 - You can also bring an item into scope with `use` and a relative path as Listing 7-12
 
 ### Creating Idiomatic `use` Paths
