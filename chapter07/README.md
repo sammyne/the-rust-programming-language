@@ -70,6 +70,7 @@ make an item like a function or struct private, you put it in a module
 - If we use `pub` before a struct definition, we make the struct public, but the struct’s fields will still be private
     - Example as [Listing 7-9: A struct with some public fields and some private fields](./listings/_09/src/lib.rs)
 - If we make an enum public, all of its variants are then public. We only need the `pub` before the `enum` keyword
+    - Example as [Listing 7-10: Designating an enum as public makes all its variants public](./listings/_10/src/lib.rs)
 
 ## Bringing Paths into Scope with the `use` Keyword
 - Adding `use` and a path in a scope is similar to creating a symbolic link in the filesystem
