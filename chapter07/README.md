@@ -43,7 +43,7 @@ known as the *module tree*
 ## Paths for Referring to an Item in the Module Tree
 - A path can take two forms:
     * An *absolute path* starts from a crate root by using a crate name or a
-    literal `crate`.
+    literal `crate` as [Listing 7-3: Calling the `add_to_waitlist` function using absolute and relative paths](./listings/_03/src/lib.rs) (Listing 7-3 isn't ready for running yet)
     * A *relative path* starts from the current module and uses `self`, `super`, or
     an identifier in the current module.
 - Both absolute and relative paths are followed by one or more identifiers separated by double colons (`::`)
