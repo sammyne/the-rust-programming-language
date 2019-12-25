@@ -140,3 +140,4 @@ the module
 - [Example v1](./listings/_21_22/src/lib.rs) 
   - Listing 7-21: Declaring the `front_of_house` module whose body will be in *src/front_of_house.rs*
   - Listing 7-22: Definitions inside the `front_of_house` module in *src/front_of_house.rs*
+- [Example v2](./listings/_23/src/lib.rs)
