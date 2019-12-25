@@ -64,6 +64,7 @@ make an item like a function or struct private, you put it in a module
 ### Starting Relative Paths with `super`
 - Construct relative paths that begin in the parent module by using `super` at the start of the path
 - WHEN: two modules are likely to stay in the same relationship to each other and get moved
+- Example as [Listing 7-8: Calling a function using a relative path starting with `super`](./listings/_08/src/main.rs)
 
 ### Making Structs and Enums Public
 - If we use `pub` before a struct definition, we make the struct public, but the struct’s fields will still be private
