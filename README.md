@@ -8,3 +8,4 @@
 - [ ] Chapter 17. Object-oriented programming features of rust
     - todo
       - link README.md to commits
+- [ ] Chapter 19. Advanced Features
