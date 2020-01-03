@@ -434,8 +434,8 @@ with a special crate type
     ```
 
 ### How to Write a Custom `derive` Macro
-- At the time of this writing,
-procedural macros need to be in their own crate
+- Example as [listing [30-33]](./listings/_30_31_32_33/app/src/main.rs)
+- At the time of this writing, procedural macros need to be in their own crate
 - The convention for structuring crates and macro crates is as
 follows: for a crate named `foo`, a custom derive procedural macro crate is
 called `foo_derive`
@@ -447,9 +447,7 @@ writing a procedural macro more convenient
 - The `syn` crate parses Rust code from a string into a data structure that we
 can perform operations on. The `quote` crate turns `syn` data structures back
 into Rust code
-- The `parse` function in
-`syn` takes a `TokenStream` and returns a `DeriveInput` struct representing the
-parsed Rust code
+- The `parse` function in `syn` takes a `TokenStream` and returns a `DeriveInput` struct representing the parsed Rust code
 - It’s necessary for our procedural macro to panic on errors because
 `proc_macro_derive` functions must return `TokenStream` rather than `Result` to
 conform to the procedural macro API
@@ -460,8 +458,7 @@ enter `#name`, and `quote!` will replace it with the value in the variable
 - The `stringify!` macro used here is built into Rust. It takes a Rust
 expression, such as `1 + 2`, and at compile time turns the expression into a
 string literal, such as `"1 + 2"`
-- Using `stringify!` also
-saves an allocation by converting `#name` to a string literal at compile time
+- Using `stringify!` also saves an allocation by converting `#name` to a string literal at compile time
 
 ### Attribute-like macros
 - they allow you to create new attributes
