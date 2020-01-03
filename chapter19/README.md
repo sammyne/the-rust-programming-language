@@ -160,10 +160,10 @@ figure out which type you mean unless you use *fully qualified syntax*
     - Example as [listing 22](./listings/_22/src/main.rs)
 
 ### Using the Newtype Pattern to Implement External Traits on External Types
-- The tuple struct
-will have one field and be a thin wrapper around the type we want to implement
+- The tuple struct will have one field and be a thin wrapper around the type we want to implement
 a trait for. Then the wrapper type is local to our crate, and we can implement
 the trait on the wrapper
+    - Example as [listing 23](./listings/_23/src/main.rs)
 - There is no runtime performance penalty for using this
 pattern, and the wrapper type is elided at compile time
 - The downside of using this technique is that `Wrapper` is a new type, so it
