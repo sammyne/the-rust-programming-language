@@ -336,6 +336,19 @@ accept functions as arguments, but C doesn’t have closures
 - you can’t do that with closures because they don’t have a
 concrete type that is returnable; you’re not allowed to use the function
 pointer `fn` as a return type
+- Examples 
+  - Failed due to `std::marker::Sized` trait bound
+    ```rust
+    fn returns_closure() -> Fn(i32) -> i32 {
+        |x| x + 1
+    }
+    ```
+  - Ok one as 
+    ```rust
+    fn returns_closure() -> Box<dyn Fn(i32) -> i32> {
+        Box::new(|x| x + 1)
+    }
+    ```
 
 ## Macros
 - The term *macro* refers to a family of features in Rust: *declarative* macros with `macro_rules!` and three kinds of *procedural* macros:
