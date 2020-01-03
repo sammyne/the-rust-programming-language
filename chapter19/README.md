@@ -295,6 +295,7 @@ read this as "`T` may or may not be `Sized`"
 ### Function Pointers
 - Functions coerce to the type `fn`
 - The `fn` type is called a *function pointer*
+    - Example as [listing 27](./listings/_27/src/main.rs)
 - Unlike closures, `fn` is a type rather than a trait, so we specify `fn` as the
 parameter type directly rather than declaring a generic type parameter with one
 of the `Fn` traits as a trait bound
