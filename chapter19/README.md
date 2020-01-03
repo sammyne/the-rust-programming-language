@@ -307,13 +307,30 @@ functions or closures
 - An example of where you would want to only accept `fn` and not closures is when
 interfacing with external code that doesn’t have closures: C functions can
 accept functions as arguments, but C doesn’t have closures
-- As an example of where you could use either a closure defined inline or a named
-function, let’s look at a use of `map`
-- another useful pattern that exploits an implementation detail of tuple
-structs and tuple-struct enum variants
+- As an example of where you could use either a closure defined inline or a named function, let’s look at a use of `map`
+    ```rust
+    let list_of_numbers = vec![1, 2, 3];
+    let list_of_strings: Vec<String> = list_of_numbers
+        .iter()
+        .map(|i| i.to_string())     // this line can be changed to: .map(ToString::to_string)
+        .collect();
+    ```
+- another useful pattern that exploits an implementation detail of tuple structs and tuple-struct enum variants
   - use `()` as initializer syntax
   - The initializers are actually implemented as functions returning an instance that’s constructed from their arguments
   - we can specify the initializer functions as arguments for methods that take closures
+  - Example
+    ```rust
+    enum Status {
+        Value(u32),
+        Stop,
+    }
+
+    let list_of_statuses: Vec<Status> =
+        (0u32..20)
+        .map(Status::Value)
+        .collect();
+    ```
 
 ### Returning Closures
 - you can’t do that with closures because they don’t have a
