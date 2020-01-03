@@ -423,9 +423,15 @@ do
 function-like) all work in a similar fashion
 - When creating procedural macros, the definitions must reside in their own crate
 with a special crate type
-- Using procedural macros looks like the code in
-Listing 19-29, where `some_attribute` is a placeholder for using a specific
-macro
+- Using procedural macros looks like the code in Listing 19-29, where `some_attribute` is a placeholder for using a specific macro
+    ```rust
+    // Listing 19-29: An example of using a procedural macro
+    use proc_macro;
+
+    #[some_attribute]
+    pub fn some_name(input: TokenStream) -> TokenStream {
+    }
+    ```
 
 ### How to Write a Custom `derive` Macro
 - At the time of this writing,
