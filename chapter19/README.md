@@ -263,8 +263,7 @@ return
     ```
 
 ### Dynamically Sized Types and the `Sized` Trait
-- *dynamically sized types*. Sometimes referred to
-as *DSTs* or *unsized types*
+- *dynamically sized types*. Sometimes referred to as *DSTs* or *unsized types*
 - not `&str`, but `str` on its own, is a DST
 - a `&str` is *two* values: the address of the `str` and its
 length
@@ -276,6 +275,18 @@ types behind a pointer of some kind
 determine whether or not a type’s size is known at compile time
 - By default, generic functions will work only on types that have a known size at
 compile time
+    -  generic function definition like this
+        ```rust
+        fn generic<T>(t: T) {
+            // --snip--
+        }
+        ```
+    - is actually treated as though we had written this
+        ```rust
+        fn generic<T: Sized>(t: T) {
+            // --snip--
+        }
+        ```
 - A trait bound on `?Sized` is the opposite of a trait bound on `Sized`: we would
 read this as "`T` may or may not be `Sized`"
     - This syntax is only available for `Sized`, not any other traits
