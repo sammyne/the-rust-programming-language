@@ -84,10 +84,10 @@ type, which is `&'static str` in this example
 - Static variables can only store
 references with the `'static` lifetime, which means the Rust compiler can
 figure out the lifetime; we don’t need to annotate it explicitly
-- Constants and immutable static variables might seem similar, but a subtle
-difference is that values in a static variable have a fixed address in memory
-- Another difference between constants and static variables is that static
-variables can be mutable.
+- Constants and immutable static variables might seem similar, but 
+  - A subtle difference is that values in a static variable have a fixed address in memory
+  - Another difference between constants and static variables is that static variables can be mutable
+    - Example as [listing 19-10](./listings/_10/src/main.rs)
 - With mutable data that is globally accessible, it’s difficult to ensure there
 are no data races, which is why Rust considers mutable static variables to be
 unsafe
