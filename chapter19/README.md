@@ -151,6 +151,9 @@ figure out which type you mean unless you use *fully qualified syntax*
     ```rust
     <Type as Trait>::function(receiver_if_method, next_arg, ...);
     ```
+    - Examples
+      - [listing 19-18](./listings/_18/src/main.rs)
+      - [listing 19-{19,20,21}](./listings/_19_20_21/src/main.rs)
   
 ### Using Supertraits to Require One Trait’s Functionality Within Another Trait
 - We can do that in the trait definition by specifying `OutlinePrint: Display`
