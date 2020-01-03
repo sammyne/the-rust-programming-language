@@ -122,6 +122,7 @@ declaring the generic type
 (such as `+`) in particular situations
 - But you can overload the operations and corresponding traits listed
 in `std::ops` by implementing the traits associated with the operator
+    - Example as [listing 19-14](./listings/_14/src/main.rs)
 - *default type parameters* (@TODO add to listing)
 - use default type parameters in two main ways:
     * To extend a type without breaking existing code
