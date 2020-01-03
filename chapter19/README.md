@@ -112,6 +112,7 @@ the concrete types of the generic type parameters each time. When we use the
 indicate which implementation of `Iterator` we want to use
 - With associated types, we don’t need to annotate types because we can’t
 implement a trait on a type multiple times
+- Example as [listing 19-{12,13}](./listings/_12_13/src/lib.rs)
 
 ### Default Generic Type Parameters and Operator Overloading
 - The syntax for specifying a
