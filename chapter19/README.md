@@ -243,8 +243,24 @@ because it stands in the place of the return type when a function will never
 return
 - Functions that return never are called *diverging functions*
 - `continue` has a `!` value
+    ```rust
+    loop {
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        break;
+    }
+    ```
 - expressions of type `!` can be coerced into any other type
 - One final expression that has the type `!` is a `loop`
+    ```rust
+    print!("forever ");
+
+    loop {
+        print!("and ever ");
+    }
+    ```
 
 ### Dynamically Sized Types and the `Sized` Trait
 - *dynamically sized types*. Sometimes referred to
