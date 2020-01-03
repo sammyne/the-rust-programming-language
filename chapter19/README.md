@@ -180,12 +180,59 @@ details of a type
 - Newtypes can also hide internal implementation
 
 ### Creating Type Synonyms with Type Aliases
-- using this method, we don’t get the type checking benefits
-that we get from the newtype pattern discussed earlier
+- Using this method, we don’t get the type checking benefits that we get from the newtype pattern discussed earlier
+    - Example
+        ```rust
+        type Kilometers = i32;
+
+        let x: i32 = 5;
+        let y: Kilometers = 5;
+
+        println!("x + y = {}", x + y);
+        ```
 - Writing this lengthy type in function signatures and as type annotations all
 over the code can be tiresome and error prone
-- Type aliases are also commonly used with the `Result<T, E>` type for reducing
-repetition
+    - Bad
+        ```rust
+        let f: Box<dyn Fn() + Send + 'static> = Box::new(|| println!("hi"));
+
+        fn takes_long_type(f: Box<dyn Fn() + Send + 'static>) {
+            // --snip--
+        }
+
+        fn returns_long_type() -> Box<dyn Fn() + Send + 'static> {
+            // --snip--
+        #     Box::new(|| ())
+        }
+        ```
+    - Good
+        ```rust
+        type Thunk = Box<dyn Fn() + Send + 'static>;
+
+        let f: Thunk = Box::new(|| println!("hi"));
+
+        fn takes_long_type(f: Thunk) {
+            // --snip--
+        }
+
+        fn returns_long_type() -> Thunk {
+            // --snip--
+        #     Box::new(|| ())
+        }
+        ```
+- Type aliases are also commonly used with the `Result<T, E>` type for reducing repetition
+    ```rust
+    use std::io::Result;
+    use std::fmt;
+
+    pub trait Write {
+        fn write(&mut self, buf: &[u8]) -> Result<usize>;
+        fn flush(&mut self) -> Result<()>;
+
+        fn write_all(&mut self, buf: &[u8]) -> Result<()>;
+        fn write_fmt(&mut self, fmt: Arguments) -> Result<()>;
+    }
+    ```
 - The type alias helps in two ways: it makes code easier to write *and* it gives
 us a consistent interface across all of `std::io`
 
