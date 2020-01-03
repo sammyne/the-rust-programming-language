@@ -141,6 +141,7 @@ in `std::ops` by implementing the traits associated with the operator
 want to use
 - When we call `fly` on an instance of `Human`, the compiler defaults to calling
 the method that is directly implemented on the type
+    - Example as [listing 19-{16,17}](./listings/_16_17/src/main.rs)
 - Specifying the trait name before the method name clarifies to Rust which
 implementation of `fly` we want to call
 - associated functions that are part of traits don’t have a `self`
