@@ -131,6 +131,7 @@ in `std::ops` by implementing the traits associated with the operator
         fn add(self, rhs: RHS) -> Self::Output;
     }
     ```
+    - Example as [listing 19-15](./listings/_15/src/main.rs)
 - use default type parameters in two main ways:
     * To extend a type without breaking existing code
     * To allow customization in specific cases most users won’t need
