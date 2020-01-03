@@ -157,6 +157,7 @@ figure out which type you mean unless you use *fully qualified syntax*
   
 ### Using Supertraits to Require One Trait’s Functionality Within Another Trait
 - We can do that in the trait definition by specifying `OutlinePrint: Display`
+    - Example as [listing 22](./listings/_22/src/main.rs)
 
 ### Using the Newtype Pattern to Implement External Traits on External Types
 - The tuple struct
