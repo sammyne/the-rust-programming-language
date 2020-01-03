@@ -60,8 +60,8 @@ unsafe operations within an unsafe function, we don’t need to add another
 `unsafe` block
 
 #### Creating a Safe Abstraction over Unsafe Code
-- Rust’s borrow checker can’t understand that we’re borrowing different parts of
-the slice
+- Rust’s borrow checker can’t understand that we’re borrowing different parts of the slice
+- Example as [listing 19-{04,05,06}](./listings/_04_05_06/src/main.rs)
 
 #### Using `extern` Functions to Call External Code
 - Rust has a keyword, `extern`, that facilitates the creation and use of a *Foreign Function Interface (FFI)*
