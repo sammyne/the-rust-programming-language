@@ -359,15 +359,11 @@ pointer `fn` as a return type
     specified as their argument
 
 ### The Difference Between Macros and Functions
-- macros are a way of writing code that writes other code, which
-is known as *metaprogramming*
-- macros are a way of writing code that writes other code, which
-is known as *metaprogramming*
+- macros are a way of writing code that writes other code, which is known as *metaprogramming*
 - A function signature must declare the number and type of parameters the
 function has. Macros, on the other hand, can take a variable number of
 parameters
-- macros are expanded
-before the compiler interprets the meaning of the code, so a macro can, for
+- macros are expanded before the compiler interprets the meaning of the code, so a macro can, for
 example, implement a trait on a given type. A function can’t
 - The downside to implementing a macro instead of a function is that macro
 definitions are more complex than function definitions because you’re writing
@@ -384,20 +380,35 @@ Rust source code passed to the macro; the patterns are compared with the
 structure of that source code; and the code associated with each pattern, when
 matched, replaces the code passed to the macro
 - To define a macro, you use the `macro_rules!` construct
+    - Example 
+        ```rust
+        #[macro_export]
+        macro_rules! vec {
+            // a set of parentheses encompasses the whole pattern. A dollar sign (`$`)
+            // is next, followed by a set of parentheses that captures values that match the
+            // pattern within the parentheses for use in the replacement code. Within `$()` is
+            // `$x:expr`, which matches any Rust expression and gives the expression the name
+            // `$x`
+            // The comma following `$()` indicates that a literal comma separator character
+            // could optionally appear after the code that matches the code in `$()`. The `*`
+            // specifies that the pattern matches zero or more of whatever precedes the `*`
+            ( $( $x:expr ),* ) => {
+                {
+                    let mut temp_vec = Vec::new();
+                    $(
+                        temp_vec.push($x);
+                    )*
+                    temp_vec
+                }
+            };
+        }
+        ```
 - The `#[macro_export]` annotation indicates that this macro should be made
 available whenever the crate in which the macro is defined is brought into
 scope
 - Start the macro definition with `macro_rules!` and the name of the
 macro we’re defining *without* the exclamation mark
 - For the full macro pattern syntax, see [the reference](https://doc.rust-lang.org/stable/reference/macros.html)
-- First, a set of parentheses encompasses the whole pattern. A dollar sign (`$`)
-is next, followed by a set of parentheses that captures values that match the
-pattern within the parentheses for use in the replacement code. Within `$()` is
-`$x:expr`, which matches any Rust expression and gives the expression the name
-`$x` (@TODO: add to listing)
-- The comma following `$()` indicates that a literal comma separator character
-could optionally appear after the code that matches the code in `$()`. The `*`
-specifies that the pattern matches zero or more of whatever precedes the `*` (@TODO: add to listing)
 - There are some strange edge cases with `macro_rules!`
 - To learn more about how to write macros, consult
 the online documentation or other resources, such as [“The Little Book of Rust
