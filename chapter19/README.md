@@ -123,7 +123,14 @@ declaring the generic type
 - But you can overload the operations and corresponding traits listed
 in `std::ops` by implementing the traits associated with the operator
     - Example as [listing 19-14](./listings/_14/src/main.rs)
-- *default type parameters* (@TODO add to listing)
+- *default type parameters*
+    ```rust
+    trait Add<RHS=Self> {
+        type Output;
+
+        fn add(self, rhs: RHS) -> Self::Output;
+    }
+    ```
 - use default type parameters in two main ways:
     * To extend a type without breaking existing code
     * To allow customization in specific cases most users won’t need
