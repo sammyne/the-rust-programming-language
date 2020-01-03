@@ -77,6 +77,7 @@ unsafe operations within an unsafe function, we don’t need to add another
 
 ### Accessing or Modifying a Mutable Static Variable
 - In Rust, global variables are called *static* variables
+    - Example as [listing 19-09](./listings/_09/src/main.rs)
 - The names of static variables are in
 `SCREAMING_SNAKE_CASE` by convention, and we *must* annotate the variable’s
 type, which is `&'static str` in this example
