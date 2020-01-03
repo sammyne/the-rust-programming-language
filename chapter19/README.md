@@ -9,7 +9,6 @@ invalid programs
 hardware is inherently unsafe. If Rust didn’t let you do unsafe operations, you
 couldn’t do certain tasks
 
-
 ### Unsafe Superpowers
 - To switch to unsafe Rust, use the `unsafe` keyword and then start a new block
 that holds the unsafe code
@@ -40,6 +39,7 @@ within a safe abstraction and provide a safe API
 unsafe block
 - We’ve created raw pointers by using `as` to cast an immutable and a mutable
 reference into their corresponding raw pointer types
+    - Example as [Listing 19-{01,02}](./listings/_01_02/src/main.rs)
 - Creating a pointer does no harm; it’s only when we try to access the value that
 it points at that we might end up dealing with an invalid value
 - With raw pointers, we can create a mutable pointer and an immutable pointer to the
