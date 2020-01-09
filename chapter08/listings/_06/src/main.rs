@@ -4,6 +4,7 @@ fn main() {
     // below will panic
     let _does_not_exist = &v[100];
 
-    // but not this one
+    // When the `get` method is passed an index that is outside the vector, it returns `None`
+    // without panicking
     let _does_not_exist = v.get(100);
 }
