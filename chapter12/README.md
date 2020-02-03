@@ -23,7 +23,8 @@ line alias was used to invoke the program
 - Example as [Listing 12-2: Creating variables to hold the query argument and filename argument](./listings/_02/src/main.rs)
 
 ## Reading a File
-- Example 
+- Example as [Listing 12-4: Reading the contents of the file specified by the second argument](listings/_04/src/main.rs)
+    - Run by `cargo run the poem.txt`
 
 ## Refactoring to Improve Modularity and Error Handling
 ### Separation of Concerns for Binary Projects
@@ -43,7 +44,6 @@ should be limited to the following:
 
 #### Extracting the Argument Parser
 - Example 
-
 
 #### Grouping Configuration Values
 > Note: Using primitive values when a complex type would be more appropriate is
