@@ -143,7 +143,7 @@ program that the program exited with an error state.
 - Example as [Listing 12-20: Adding a new failing test for the case-insensitive function we’re about to add](./listings/_20/src/main.rs)
 
 ### Implementing the `search_case_insensitive` Function
-- Example as 12-[22-23]
+- Examples as [_21_23](./listings/_21_23/src/lib.rs)
   - We’re using the `is_err` method on the `Result` to check whether it’s an error and therefore unset, which means it *should* do a case-sensitive search
 
 ## Writing Error Messages to Standard Error Instead of Standard Output
