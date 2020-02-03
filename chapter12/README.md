@@ -52,7 +52,7 @@ should be limited to the following:
 - Example as [Listing 12-6: Refactoring parse_config to return an instance of a Config struct](./listings/_06/src/main.rs)
 
 #### Creating a Constructor for `Config`
-- Example 
+- Example as [Listing 12-7: Changing parse_config into Config::new](./listings/_07/src/main.rs)
 
 ### Fixing the Error Handling
 #### Improving the Error Message
