@@ -49,7 +49,7 @@ should be limited to the following:
 > Note: Using primitive values when a complex type would be more appropriate is
 > an anti-pattern known as *primitive obsession*.
 
-- Example
+- Example as [Listing 12-6: Refactoring parse_config to return an instance of a Config struct](./listings/_06/src/main.rs)
 
 #### Creating a Constructor for `Config`
 - Example 
