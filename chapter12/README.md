@@ -75,7 +75,7 @@ program that the program exited with an error state.
 - Example as [Listing 12-11: Extracting a run function containing the rest of the program logic src/main.rs](./listings/_11/src/main.rs)
 
 #### Returning Errors from the `run` Function
-- Example 
+- Example as [Listing 12-12: Changing the run function to return Result](./listings/_12/src/main.rs)
     - 3 significant changes
         - For the error type, we used the *trait object* `Box<dyn Error>`
         - We’ve removed the call to `expect` in favor of the `?` operator
