@@ -124,10 +124,10 @@ program that the program exited with an error state.
     * If it doesn’t, do nothing.
     * Return the list of results that match.
 
-- Example 
-    - Iterating Through Lines with the `lines` Method
-    - Searching Each Line for the Query
-    - Storing Matching Lines
+- Example as [_17_19](./listings/_17_19/src/lib.rs)
+    - Iterating Through Lines with the `lines` Method as Listing 12-17: Iterating through each line in contents
+    - Searching Each Line for the Query as Listing 12-18: Adding functionality to see whether the line contains the string in query
+    - Storing Matching Lines as Listing 12-19: Storing the lines that match so we can return them
 
 #### Using the `search` Function in the `run` Function
 - Example 
