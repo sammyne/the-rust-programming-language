@@ -98,7 +98,9 @@ program that the program exited with an error state.
     ```
 
 ### Splitting Code into a Library Crate
-- Example as 12-[13-14]
+- Example as [_13_14](./listings/_13_14/src/main.rs)
+    - Listing 12-13: Moving Config and run into src/lib.rs
+    - Listing 12-14: Using the minigrep crate in src/main.rs
 
 ## Developing the Library’s Functionality with Test-Driven Development
 - How
