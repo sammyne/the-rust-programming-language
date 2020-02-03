@@ -43,7 +43,7 @@ should be limited to the following:
     * Handling the error if `run` returns an error
 
 #### Extracting the Argument Parser
-- Example 
+- Example as [Listing 12-5: Extracting a parse_config function from main](./listings/_05/src/main.rs)
 
 #### Grouping Configuration Values
 > Note: Using primitive values when a complex type would be more appropriate is
