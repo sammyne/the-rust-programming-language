@@ -10,7 +10,7 @@ successful output to a file while still seeing error messages onscreen
 - Two details about iterators
   - iterators produce a series of values
   - call the `collect` method on an iterator to turn it into a collection, such as a vector, containing all the elements the iterator produces
-- Example 
+- Example as [Listing 12-1: Collecting the command line arguments into a vector and printing them](listings/_01/src/main.rs)
 
 > If your program needs to accept arguments containing invalid
 > Unicode, use `std::env::args_os` instead
