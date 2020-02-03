@@ -20,7 +20,7 @@ print it in messages or change behavior of the program based on what command
 line alias was used to invoke the program
 
 ### Saving the Argument Values in Variables
-- Example 
+- Example as [Listing 12-2: Creating variables to hold the query argument and filename argument](./listings/_02/src/main.rs)
 
 ## Reading a File
 - Example 
