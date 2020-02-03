@@ -130,7 +130,7 @@ program that the program exited with an error state.
     - Storing Matching Lines as Listing 12-19: Storing the lines that match so we can return them
 
 #### Using the `search` Function in the `run` Function
-- Example 
+- Example as [run_with_search](./listings/run_with_search/src/main.rs)
 - Test
     ```bash
     cargo run frog poem.txt
