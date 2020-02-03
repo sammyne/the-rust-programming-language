@@ -72,7 +72,7 @@ program that the program exited with an error state.
     - If the value is an `Err` value, this method calls the code in the *closure*, which is an anonymous function we define and pass as an argument to `unwrap_or_else`
 
 ### Extracting Logic from `main`
-- Example 
+- Example as [Listing 12-11: Extracting a run function containing the rest of the program logic src/main.rs](./listings/_11/src/main.rs)
 
 #### Returning Errors from the `run` Function
 - Example 
