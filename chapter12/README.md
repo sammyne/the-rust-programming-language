@@ -140,7 +140,7 @@ program that the program exited with an error state.
 
 ## Working with Environment Variables
 ### Writing a Failing Test for the Case-Insensitive `search` Function
-- Example 
+- Example as [Listing 12-20: Adding a new failing test for the case-insensitive function we’re about to add](./listings/_20/src/main.rs)
 
 ### Implementing the `search_case_insensitive` Function
 - Example as 12-[22-23]
