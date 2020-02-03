@@ -7,6 +7,7 @@
 - [ ] Chapter 07. Managing Growing Projects with Packages, Crates, and Modules
 - [x] Chapter 08. Common Collections
 - [x] Chapter 11. Writing Automated Tests
+- [ ] Chapter 12. An I/O Project: Building a Command Line Program
 - [ ] Chapter 16. Fearless Concurrency  
 - [ ] Chapter 17. Object-oriented programming features of rust
     - todo
