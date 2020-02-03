@@ -56,7 +56,7 @@ should be limited to the following:
 
 ### Fixing the Error Handling
 #### Improving the Error Message
-- Example 
+- Example as [Listing 12-8: Adding a check for the number of arguments](./listings/_08/src/main.rs)
 - Still we also have extraneous information we don’t want to give to our users
 
 #### Returning a `Result` from `new` Instead of Calling `panic!`
