@@ -60,7 +60,8 @@ should be limited to the following:
 - Still we also have extraneous information we don’t want to give to our users
 
 #### Returning a `Result` from `new` Instead of Calling `panic!`
-- Example 
+- Example as [Listing 12-9: Returning a Result from Config::new](./listings/_09/src/main.rs)
+    - Not ready to run yet
 
 #### Calling `Config::new` and Handling Errors
 - A nonzero exit status is a convention to signal to the process that called our
