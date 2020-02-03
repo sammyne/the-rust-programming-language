@@ -66,7 +66,7 @@ should be limited to the following:
 #### Calling `Config::new` and Handling Errors
 - A nonzero exit status is a convention to signal to the process that called our
 program that the program exited with an error state.
-- Example 
+- Example as [Listing 12-10: Exiting with an error code if creating a new Config fails](./listings/_10/src/main.rs)
   - Important method `unwrap_or_else`
     - If the `Result` is an `Ok` value, this method’s behavior is similar to `unwrap`: it returns the inner value `Ok` is wrapping
     - If the value is an `Err` value, this method calls the code in the *closure*, which is an anonymous function we define and pass as an argument to `unwrap_or_else`
