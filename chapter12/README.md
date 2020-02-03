@@ -154,12 +154,11 @@ program that the program exited with an error state.
     cargo run > output.txt
     ```
 
-- The `>` syntax tells the shell to write the contents of standard output to
-*output.txt* instead of the screen
+- The `>` syntax tells the shell to write the contents of standard output to *output.txt* instead of the screen
 
 ### Printing Errors to Standard Error
 - The standard library provides the `eprintln!` macro that prints to the standard error stream
-- Example 
+- Example as [Listing 12-24: Writing error messages to standard error instead of standard output using `eprintln`!](./listings/_24/src/main.rs)
 - Test
 ```bash
 cargo run to poem.txt > output.txt
