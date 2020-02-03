@@ -112,7 +112,9 @@ program that the program exited with an error state.
     4. Repeat from step 1!
 
 ### Writing a Failing Test
-- Example 
+- Example as [_15_16](./listings/_15_16/src/main.rs)
+    - Listing 12-15: Creating a failing test for the search function we wish we had
+    - Listing 12-16: Defining just enough of the search function so our test will compile
 
 ### Writing Code to Pass the Test
 - Implementation detail of `search`
