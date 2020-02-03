@@ -83,7 +83,19 @@ program that the program exited with an error state.
           - Using `()` like this is the idiomatic way to indicate that we’re calling `run` for its side effects only 
 
 #### Handling Errors Returned from `run` in `main`
-- Example snippet
+- Example snippet as 
+    ```rust
+    fn main() {
+        // --snip--
+        println!("Searching for {}", config.query);
+        println!("In file {}", config.filename);
+
+        if let Err(e) = run(config) {
+            println!("Application error: {}", e);
+            process::exit(1);
+        }
+    }
+    ```
 
 ### Splitting Code into a Library Crate
 - Example as 12-[13-14]
