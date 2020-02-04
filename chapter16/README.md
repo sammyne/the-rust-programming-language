@@ -37,9 +37,9 @@ features that run these independent parts are called *threads*.
 ### Waiting for All Threads to Finish Using `join` Handles
 - The return type of `thread::spawn` is `JoinHandle`. A `JoinHandle` is an owned
 value that, when we call the `join` method on it, will wait for its thread to finish
+- Example as [Listing 16-2: Saving a `JoinHandle` from `thread::spawn` to guarantee the thread is run to completion](./listings/_02/src/main.rs)
 
 ### Using `move` Closures with Threads
-- Example as 
 
 ## Using Message Passing to Transfer Data Between Threads
 - A channel in programming has two halves: a transmitter and a receiver
