@@ -71,7 +71,7 @@ values don’t match
 - Being familiar with the concept of refutability can help to debug errors 
     - Examples as 
       - [Listing 18-8: Attempting to use a refutable pattern with `let`](./listings/_08/src/main.rs)
-      - [Listing 18-9: Using `if let` and a block with refutable patterns instead of `let`]
+      - [Listing 18-9: Using `if let` and a block with refutable patterns instead of `let`](./listings/_09/src/main.rs)
 - Match arms must use refutable patterns, except for the last
 arm, which should match any remaining values with an irrefutable pattern
     > Rust allows us to use an irrefutable pattern in a `match` with only one arm, but
