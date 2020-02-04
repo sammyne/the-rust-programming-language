@@ -53,8 +53,10 @@ value that, when we call the `join` method on it, will wait for its thread to fi
 - The receiving end of a channel has two useful methods: `recv` and `try_recv`
   - `try_recv` doesn’t block, but will instead return a `Result<T, E>` immediately: an `Ok` value holding a message if one is available and an `Err` value if there aren’t any messages this time
   - Using `try_recv` is useful if this thread has other work to do while waiting for messages
-- Examples as 
-  - 16-[6-8]
+- Examples as [_06_08](./listings/_06_08/src/main.rs)
+    - Listing 16-6: Creating a channel and assigning the two halves to tx and rx
+    - Listing 16-7: Moving tx to a spawned thread and sending "hi"
+    - Listing 16-8: Receiving the value "hi" in the main thread and printing it
 
 ### Channels and Ownership Transference
 - Failed example
