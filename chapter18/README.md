@@ -31,7 +31,7 @@ so it’s often used in the last match arm
 
 ### Conditional `if let` Expressions
 - Use `if let` expressions mainly as a shorter way to write the equivalent of a `match` that only matches one case
-- Example 
+- Example as [Listing 18-1: Mixing `if let`, `else if`, `else if let`, and `else`](./listings/_01/src/main.rs)
     - `if let` can also introduce shadowed variables in the same way that `match` arms can: the line `if let Ok(age) = age` introduces a new shadowed `age` variable that contains the value inside the `Ok` variant
     - The shadowed `age` we want to compare to 30 isn’t valid until the new scope starts with the curly bracket
 - The downside of using `if let` expressions is that the compiler doesn’t check
