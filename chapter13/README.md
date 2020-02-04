@@ -31,7 +31,7 @@ explicitness and clarity at the cost of being more verbose than is strictly nece
   - Example as [Listing 13-7: Adding optional type annotations of the parameter and return value types in the closure](./listings/_07/src/main.rs)
 - Closure definitions will have one concrete type inferred for each of their
 parameters and for their return value
-- Example 
+- Example as [Listing 13-8: Attempting to call a closure whose types are inferred with two different types](./listings/_08/src/main.rs)
     - Parameter types are then locked in to the closure in `example_closure`, and we get a type error if we try to use a different type with the same closure
 
 ### Storing Closures Using Generic Parameters and the `Fn` Traits
