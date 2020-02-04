@@ -86,7 +86,9 @@ determining when the sequence has finished. When you use iterators, you don’t
 have to reimplement that logic yourself
 - Iterators are *lazy*, meaning they have no effect until you call
 methods that consume the iterator to use it up
-- Example 13-[13-14]
+- Examples as [_13_14](./listings/_13_14/src/main.rs)
+    - Listing 13-13: Creating an iterator
+    - Listing 13-14: Using an iterator in a for loop
 
 ### The `Iterator` Trait and the `next` Method
 - Trait
