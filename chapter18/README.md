@@ -94,7 +94,7 @@ match x {
 ### Matching Named Variables
 - Named variables are irrefutable patterns that match any value
 - Because `match` starts a new scope, variables declared as part of a pattern inside the `match` expression will shadow those with the same name outside the `match` construct, as is the case with all variables
-  - Example as [Listing 18-11: A `match` expression with an arm that introduces a shadowed variable `y`]
+  - Example as [Listing 18-11: A `match` expression with an arm that introduces a shadowed variable `y`](./listings/_11/src/main.rs)
 - To create a `match` expression that compares the values of the outer `x` and
 `y`, rather than introducing a shadowed variable, we would need to use a match
 guard conditional instead
