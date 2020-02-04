@@ -139,11 +139,13 @@ the iterator and returns a Boolean
 
 ## Improving Our I/O Project
 ### Removing a `clone` Using an Iterator
-- Reproduced example
 - How
-    - Using the Returned Iterator Directly
+    - Using the Returned Iterator Directly as 
+      - Listing 13-25: Passing the return value of `env::args` to `Config::new`
+      - Listing 13-26: Updating the signature of `Config::new` to expect an iterator
     - Using `Iterator` Trait Methods Instead of Indexing
-- Final example
+        - Listing 13-27: Changing the body of `Config::new` to use iterator methods
+- Final example as [_25_27](./listings/_25_27/src/main.rs)
 
 ### Making Code Clearer with Iterator Adaptors
 - The functional programming style prefers to minimize the amount of mutable state to make code clearer
