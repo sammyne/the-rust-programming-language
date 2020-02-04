@@ -77,7 +77,7 @@ three `Fn` traits as follows:
 closure uses the values from the environment
 - If you want to force the closure to take ownership of the values it uses in the
 environment, you can use the `move` keyword before the parameter list
-    - Example 
+    - Example as [closure_move](./listings/closure_move/src/main.rs)
 
 ## Processing a Series of Items with Iterators
 - The iterator pattern allows you to perform some task on a sequence of items in turn
