@@ -119,7 +119,7 @@ pub trait Iterator {
 - Other methods defined on the `Iterator` trait, known as *iterator adaptors*, allow you to change iterators into different kinds of iterators
 - You can chain multiple calls to iterator adaptors to perform complex actions in a readable way
     - Because all iterators are lazy, you have to call one of the consuming adaptor methods to get results from calls to iterator adaptors
-- Example 13-18
+- Example as [Listing 13-18: Calling the map method to create a new iterator and then calling the collect method to consume the new iterator and create a vector](./listings/_18/Cargo.lock) 
 
 ### Using Closures that Capture Their Environment
 - The `filter` method on an iterator takes a closure that takes each item from
