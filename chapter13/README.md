@@ -15,11 +15,12 @@ arguments to other functions
 - Example as [Listing 13-4: Extracting the calls to simulated_expensive_calculation to one place and storing the result in the expensive_result variable](./listings/_04/src/main.rs)
 
 #### Refactoring with Closures to Store Code
-- Example 
+- Examples as [_05_06](./listings/_05_06/src/main.rs)
+    - Listing 13-5: Defining a closure and storing it in the expensive_closure variable
+    - Listing 13-6: Calling the expensive_closure we’ve defined 
 - To define a closure
   - We start with a pair of vertical pipes (`|`), inside which we specify the parameters separated with commas to the closure
-  - After the parameters, we place curly brackets that hold the body of the
-closure—these are optional if the closure body is a single expression
+  - After the parameters, we place curly brackets that hold the body of the closure—these are optional if the closure body is a single expression
 - Example 
 
 ### Closure Type Inference and Annotation
