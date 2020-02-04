@@ -161,7 +161,7 @@ destructure the other fields
 
 ### Ignoring Values in a Pattern
 #### Ignoring an Entire Value with `_`
-- Example as [Listing 18-17: Using `_` in a function signature]
+- Example as [Listing 18-17: Using `_` in a function signature](./listings/_17/src/main.rs)
 - Ignoring a function parameter can be especially useful in some cases, for example, when
 implementing a trait when you need a certain type signature but the function
 body in your implementation doesn’t need one of the parameters
