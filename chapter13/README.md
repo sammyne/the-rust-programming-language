@@ -104,7 +104,7 @@ pub trait Iterator {
 - The `Iterator` trait only requires implementors to define one method: the
 `next` method, which returns one item of the iterator at a time wrapped in
 `Some` and, when iteration is over, returns `None`
-- Example 
+- Example as [Listing 13-15: Calling the next method on an iterator](./listings/_15/src/lib.rs)
     - we needed to make `v1_iter` mutable: calling the `next` method on an iterator changes internal state that the iterator uses to keep track of where it is in the sequence
     - We didn’t need to make `v1_iter` mutable when we used a `for` loop because the loop took ownership of `v1_iter` and made it mutable behind the scenes
 - The `iter` method produces an iterator over immutable references
