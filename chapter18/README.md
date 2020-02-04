@@ -185,7 +185,7 @@ warning because that could be a bug
 
 #### Ignoring Remaining Parts of a Value with `..`
 - We want to operate only on the `x` coordinate and ignore the values in the `y` and `z` fields
-  - Example as [Listing 18-23: Ignoring all fields of a `Point` except for `x` by using `..`]
+  - Example as [Listing 18-23: Ignoring all fields of a `Point` except for `x` by using `..`](./listings/_23/src/main.rs)
 - The syntax `..` will expand to as many values as it needs to be
   - Example as [Listing 18-24: Matching only the first and last values in a tuple and ignoring all other values]
 - Using `..` must be unambiguous
