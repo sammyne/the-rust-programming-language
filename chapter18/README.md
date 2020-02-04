@@ -187,7 +187,7 @@ warning because that could be a bug
 - We want to operate only on the `x` coordinate and ignore the values in the `y` and `z` fields
   - Example as [Listing 18-23: Ignoring all fields of a `Point` except for `x` by using `..`](./listings/_23/src/main.rs)
 - The syntax `..` will expand to as many values as it needs to be
-  - Example as [Listing 18-24: Matching only the first and last values in a tuple and ignoring all other values]
+  - Example as [Listing 18-24: Matching only the first and last values in a tuple and ignoring all other values](./listings/_24/src/main.rs)
 - Using `..` must be unambiguous
     - Failed example as [Listing 18-25: An attempt to use `..` in an ambiguous way]
 
