@@ -40,6 +40,8 @@ value that, when we call the `join` method on it, will wait for its thread to fi
 - Example as [Listing 16-2: Saving a `JoinHandle` from `thread::spawn` to guarantee the thread is run to completion](./listings/_02/src/main.rs)
 
 ### Using `move` Closures with Threads
+- Failed example as [Listing 16-3: Attempting to use a vector created by the main thread in another thread](./listings/_03/src/main.rs)
+- Example as [Listing 16-5: Using the move keyword to force a closure to take ownership of the values it uses](./listings/_05/src/main.rs)
 
 ## Using Message Passing to Transfer Data Between Threads
 - A channel in programming has two halves: a transmitter and a receiver
