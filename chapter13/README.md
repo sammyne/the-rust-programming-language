@@ -135,7 +135,7 @@ the iterator and returns a Boolean
 - Example as [Listing 13-22: Testing the functionality of the next method implementation](./listings/_22/src/lib.rs)
 
 #### Using Other `Iterator` Trait Methods
-- Example
+- Example as [Listing 13-23: Using a variety of Iterator trait methods on our Counter iterator](./listings/_23/src/lib.rs)
 
 ## Improving Our I/O Project
 ### Removing a `clone` Using an Iterator
