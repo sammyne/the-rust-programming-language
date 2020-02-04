@@ -41,7 +41,10 @@ parameters and for their return value
 - Each closure instance has its own unique anonymous type: that is, even
 if two closures have the same signature, their types are still considered different
 - All closures implement at least one of the traits: `Fn`, `FnMut`, or `FnOnce`
-- Examples as 13-[9-11]
+- Examples as [_09_11](./listings/_09_11/src/main.rs)
+    - Listing 13-9: Defining a Cacher struct that holds a closure in calculation and an optional result in value
+    - Listing 13-10: The caching logic of Cacher
+    - Listing 13-11: Using Cacher in the generate_workout function to abstract away the caching logic
 
 ### Limitations of the `Cacher` Implementation
 - A `Cacher` instance assumes it will always get the same value for the parameter `arg` to the `value` method
