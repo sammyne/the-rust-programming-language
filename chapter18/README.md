@@ -44,7 +44,7 @@ exhaustiveness, whereas with `match` expressions it does
 
 ### `for` Loops
 - In a `for` loop, the pattern is the value that directly follows the keyword `for`, so in `for x in y` the `x` is the pattern
-- Example
+- Example as [Listing 18-3: Using a pattern in a `for` loop to destructure a tuple](./listings/_03/src/main.rs)
 
 ### `let` Statements
 - More formally, a `let` statement looks like this:
