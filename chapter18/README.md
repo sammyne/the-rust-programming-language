@@ -151,7 +151,7 @@ destructure the other fields
 - Example as [Listing 18-15: Destructuring enum variants that hold different kinds of values](./listings/_15/src/main.rs)
 
 #### Destructuring Nested Structs and Enums
-- Example as [Listing 18-16: Matching on nested enums]
+- Example as [Listing 18-16: Matching on nested enums](./listings/_16/src/main.rs)
 
 #### Destructuring Structs and Tuples
 - Example
