@@ -57,7 +57,7 @@ exhaustiveness, whereas with `match` expressions it does
 - If we wanted to ignore one or more of the values in the tuple, we could use `_` or `..` (detailed later)
 
 ### Function Parameters
-- Example as [Listing 18-7: A function with parameters that destructure a tuple]
+- Example as [Listing 18-7: A function with parameters that destructure a tuple](./listings/_07/src/main.rs)
 - We can also use patterns in closure parameter lists in the same way as in
 function parameter lists
 
