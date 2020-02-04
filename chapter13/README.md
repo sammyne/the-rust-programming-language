@@ -113,7 +113,7 @@ pub trait Iterator {
 
 ### Methods that Consume the Iterator
 - Methods that call `next` are called *consuming adaptors*, because calling them uses up the iterator
-- Example
+- Example as [_16](./listings/_16/src/lib.rs)
 
 ### Methods that Produce Other Iterators
 - Other methods defined on the `Iterator` trait, known as *iterator adaptors*, allow you to change iterators into different kinds of iterators
