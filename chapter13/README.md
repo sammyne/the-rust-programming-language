@@ -21,7 +21,6 @@ arguments to other functions
 - To define a closure
   - We start with a pair of vertical pipes (`|`), inside which we specify the parameters separated with commas to the closure
   - After the parameters, we place curly brackets that hold the body of the closure—these are optional if the closure body is a single expression
-- Example 
 
 ### Closure Type Inference and Annotation
 - Closures don’t require you to annotate the types of the parameters or the
@@ -29,7 +28,7 @@ return value like `fn` functions do. Type annotations are required on functions
 because they’re part of an explicit interface exposed to your users
 - We can add type annotations if we want to increase
 explicitness and clarity at the cost of being more verbose than is strictly necessary
-  - Example 
+  - Example as [Listing 13-7: Adding optional type annotations of the parameter and return value types in the closure](./listings/_07/src/main.rs)
 - Closure definitions will have one concrete type inferred for each of their
 parameters and for their return value
 - Example 
