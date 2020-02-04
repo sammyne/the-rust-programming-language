@@ -54,7 +54,7 @@ if two closures have the same signature, their types are still considered differ
 accepts closures that take one parameter of type `u32` and return a `u32`
 
 ### Capturing the Environment with Closures
-- Example 
+- Example as [Listing 13-12: Example of a closure that refers to a variable in its enclosing scope](./listings/_12/src/main.rs)
 - When a closure captures a value from its environment, it uses memory to store
 the values for use in the closure body. This use of memory is overhead that we
 don’t want to pay in more common cases where we want to execute code that
