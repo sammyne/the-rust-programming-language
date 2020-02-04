@@ -82,7 +82,7 @@ one thread to access some data at any given time
     data so other threads can acquire the lock.
 
 #### The API of `Mutex<T>`
-- Example 
+- Example as [Listing 16-12: Exploring the API of `Mutex<T>` in a single-threaded context for simplicity](./listings/_12/src/main.rs)
     - The call to `lock` would fail if another thread holding the lock panicked
 - The call to `lock` *returns* a smart pointer called `MutexGuard`, wrapped in a
 `LockResult` that we handled with the call to `unwrap`
