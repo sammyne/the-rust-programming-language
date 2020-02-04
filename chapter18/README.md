@@ -181,7 +181,7 @@ warning because that could be a bug
 - The syntax `_x` still binds the value to the variable, whereas `_` doesn’t bind at all
     - Examples 
       - [Listing 18-21: An unused variable starting with an underscore still binds the value, which might take ownership of the value](listings/_21/src/main.rs)
-      - Listing 18-22: Using an underscore does not bind the value
+      - [Listing 18-22: Using an underscore does not bind the value](./listings/_22/src/main.rs)
 
 #### Ignoring Remaining Parts of a Value with `..`
 - We want to operate only on the `x` coordinate and ignore the values in the `y` and `z` fields
