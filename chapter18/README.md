@@ -138,7 +138,7 @@ which Rust can tell if a range is empty or not are `char` and numeric values
 ### Destructuring to Break Apart Values
 #### Destructuring Structs
 - Examples 
-  - Full as [Listing 18-12: Destructuring a struct’s fields into separate variables]
+  - Full as [Listing 18-12: Destructuring a struct’s fields into separate variables](./listings/_12/src/main.rs)
   - Shorthand as [Listing 18-13: Destructuring struct fields using struct field shorthand]
 - We can also destructure with literal values as part of the struct pattern
 rather than creating variables for all the fields. Doing so allows us to test
