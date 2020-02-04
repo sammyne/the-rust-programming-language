@@ -51,7 +51,7 @@ exhaustiveness, whereas with `match` expressions it does
     ```text
     let PATTERN = EXPRESSION;
     ```
-- Example
+- Example as [_04_05](./listings/_04_05/src/main.rs)
     - Listing 18-4: Using a pattern to destructure a tuple and create three variables at once
     - Listing 18-5: Incorrectly constructing a pattern whose variables don’t match the number of elements in the tuple
 - If we wanted to ignore one or more of the values in the tuple, we could use `_` or `..` (detailed later)
