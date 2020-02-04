@@ -93,7 +93,7 @@ one thread to access some data at any given time
 - Bad example as [Listing 16-13: Ten threads each increment a counter guarded by a `Mutex<T>`](./listings/_13/src/main.rs)
 
 #### Multiple Ownership with Multiple Threads
-- Example
+- Failed example as [Listing 16-14: Attempting to use Rc<T> to allow multiple threads to own the Mutex<T>](./listings/_14/src/main.rs)
 - `Rc<T>` is not safe to share across threads
 
 #### Atomic Reference Counting with `Arc<T>`
