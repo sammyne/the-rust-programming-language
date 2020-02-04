@@ -195,7 +195,7 @@ warning because that could be a bug
 - A *match guard* is an additional `if` condition specified after the pattern in
 a `match` arm that must also match, along with the pattern matching, for that
 arm to be chosen
-    - Example as [Listing 18-26: Adding a match guard to a pattern]
+    - Example as [Listing 18-26: Adding a match guard to a pattern](./listings/_26/src/main.rs)
 - Use match guards to solve our pattern-shadowing problem
     - Example as [Listing 18-27: Using a match guard to test for equality with an outer variable]
 - You can also use the *or* operator `|` in a match guard to specify multiple
