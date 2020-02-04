@@ -59,7 +59,7 @@ value that, when we call the `join` method on it, will wait for its thread to fi
     - Listing 16-8: Receiving the value "hi" in the main thread and printing it
 
 ### Channels and Ownership Transference
-- Failed example
+- Failed example as [Listing 16-9: Attempting to use val after we’ve sent it down the channel](./listings/_09/src/main.rs)
 - The `send` function takes ownership of its parameter, and when the value is moved, the receiver takes ownership of it
 
 ### Sending Multiple Values and Seeing the Receiver Waiting
