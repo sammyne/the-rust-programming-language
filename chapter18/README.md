@@ -139,7 +139,7 @@ which Rust can tell if a range is empty or not are `char` and numeric values
 #### Destructuring Structs
 - Examples 
   - Full as [Listing 18-12: Destructuring a struct’s fields into separate variables](./listings/_12/src/main.rs)
-  - Shorthand as [Listing 18-13: Destructuring struct fields using struct field shorthand]
+  - Shorthand as [Listing 18-13: Destructuring struct fields using struct field shorthand](./listings/_13/src/main.rs)
 - We can also destructure with literal values as part of the struct pattern
 rather than creating variables for all the fields. Doing so allows us to test
 some of the fields for particular values while creating variables to
