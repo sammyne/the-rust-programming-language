@@ -40,7 +40,7 @@ exhaustiveness, whereas with `match` expressions it does
 ### `while let` Conditional Loops
 - The `while let` conditional loop allows a
 `while` loop to run for as long as a pattern continues to match
-- Example
+- Example as [Listing 18-2: Using a `while let` loop to print values for as long as `stack.pop()` returns `Some`](./listings/_02/src/main.rs)
 
 ### `for` Loops
 - In a `for` loop, the pattern is the value that directly follows the keyword `for`, so in `for x in y` the `x` is the pattern
