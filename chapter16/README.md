@@ -66,7 +66,7 @@ value that, when we call the `join` method on it, will wait for its thread to fi
 - Example as [Listing 16-10: Sending multiple messages and pausing between each](./listings/_10/src/main.rs)
 
 ### Creating Multiple Producers by Cloning the Transmitter
-- Example 
+- Example as [Listing 16-11: Sending multiple messages from multiple producers](./listings/_11/src/main.rs)
 
 ## Shared-State Concurrency
 - Shared memory concurrency is like multiple ownership: multiple threads
