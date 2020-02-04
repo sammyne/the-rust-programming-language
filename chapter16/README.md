@@ -100,7 +100,7 @@ one thread to access some data at any given time
 - `Arc<T>` *is* a type like `Rc<T>` that is safe to use in concurrent situations
     - The *a* stands for *atomic*, meaning it’s an *atomically reference counted* type
 - Why standard library types aren’t implemented to use `Arc<T>` by default. The reason is that thread safety comes with a performance penalty that you only want to pay when you really need to
-- Example
+- Example as [Listing 16-15: Using an Arc<T> to wrap the Mutex<T> to be able to share ownership across multiple threads](./listings/_15/src/main.rs)
 
 ### Similarities Between `RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`
 - `RefCell<T>` allows us to mutate contents inside an `Rc<T>`, and we use `Mutex<T>` to mutate contents inside an `Arc<T>`
