@@ -132,7 +132,7 @@ the iterator and returns a Boolean
     - Listing 13-21: Implementing the Iterator trait on our Counter struct
 
 #### Using Our `Counter` Iterator’s `next` Method
-- Example 
+- Example as [Listing 13-22: Testing the functionality of the next method implementation](./listings/_22/src/lib.rs)
 
 #### Using Other `Iterator` Trait Methods
 - Example
