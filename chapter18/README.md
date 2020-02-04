@@ -148,7 +148,7 @@ destructure the other fields
 
 #### Destructuring Enums
 - The pattern to destructure an enum should correspond to the way the data stored within the enum is defined
-- Example as [Listing 18-15: Destructuring enum variants that hold different kinds of values]
+- Example as [Listing 18-15: Destructuring enum variants that hold different kinds of values](./listings/_15/src/main.rs)
 
 #### Destructuring Nested Structs and Enums
 - Example as [Listing 18-16: Matching on nested enums]
