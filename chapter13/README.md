@@ -124,7 +124,7 @@ pub trait Iterator {
 ### Using Closures that Capture Their Environment
 - The `filter` method on an iterator takes a closure that takes each item from
 the iterator and returns a Boolean
-- Example
+- Example as [Listing 13-19: Using the filter method with a closure that captures shoe_size](./listings/_19/src/lib.rs)
 
 ### Creating Our Own Iterators with the `Iterator` Trait
 - Example as 13-[20-21]
