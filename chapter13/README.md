@@ -48,7 +48,7 @@ if two closures have the same signature, their types are still considered differ
 
 ### Limitations of the `Cacher` Implementation
 - A `Cacher` instance assumes it will always get the same value for the parameter `arg` to the `value` method
-  - Failed example
+  - Failed example as [failed_cacher](./listings/failed_cacher/src/main.rs)
   - Solution: try modifying `Cacher` to hold a hash map rather than a single value
 - The current `Cacher` implementation is that it only
 accepts closures that take one parameter of type `u32` and return a `u32`
