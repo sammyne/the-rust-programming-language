@@ -111,13 +111,13 @@ guard conditional instead
     }
     ```
 
-### Matching Ranges of Values with `...`
+### Matching Ranges of Values with `..=`
 - The `...` syntax allows us to match to an inclusive range of values
     ```rust
     let x = 5;
 
     match x {
-        1 ... 5 => println!("one through five"),
+        1 ..= 5 => println!("one through five"),
         _ => println!("something else"),
     }
     ```
@@ -129,8 +129,8 @@ which Rust can tell if a range is empty or not are `char` and numeric values
     let x = 'c';
 
     match x {
-        'a' ... 'j' => println!("early ASCII letter"),
-        'k' ... 'z' => println!("late ASCII letter"),
+        'a' ..= 'j' => println!("early ASCII letter"),
+        'k' ..= 'z' => println!("late ASCII letter"),
         _ => println!("something else"),
     }
     ```
@@ -205,4 +205,4 @@ patterns; the match guard condition will apply to all the patterns
 ### `@` Bindings
 - The *at* operator (`@`) lets us create a variable that holds a value at the
 same time we’re testing that value to see whether it matches a pattern
-    - Example as [Listing 18-29: Using `@` to bind to a value in a pattern while also testing it]
+    - Example as [Listing 18-29: Using `@` to bind to a value in a pattern while also testing it](./listings/_29/src/main.rs)
