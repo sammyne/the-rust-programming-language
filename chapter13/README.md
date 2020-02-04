@@ -149,7 +149,7 @@ the iterator and returns a Boolean
 
 ### Making Code Clearer with Iterator Adaptors
 - The functional programming style prefers to minimize the amount of mutable state to make code clearer
-  - Example
+  - Example as [Listing 13-29: Using iterator adaptor methods in the implementation of the search function](./listings/_29/src/lib.rs)
 
 ## Comparing Performance: Loops vs. Iterators
 - Iterators are one of Rust’s *zero-cost abstractions*, by which we mean using the abstraction
