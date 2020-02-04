@@ -127,7 +127,9 @@ the iterator and returns a Boolean
 - Example as [Listing 13-19: Using the filter method with a closure that captures shoe_size](./listings/_19/src/lib.rs)
 
 ### Creating Our Own Iterators with the `Iterator` Trait
-- Example as 13-[20-21]
+- Examples as [_20_21](./listings/_20_21/src/main.rs)
+    - Listing 13-20: Defining the Counter struct and a new function that creates instances of Counter with an initial value of 0 for count
+    - Listing 13-21: Implementing the Iterator trait on our Counter struct
 
 #### Using Our `Counter` Iterator’s `next` Method
 - Example 
