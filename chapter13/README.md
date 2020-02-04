@@ -12,7 +12,7 @@ arguments to other functions
     - Listing 13-3: The business logic that prints the workout plans based on the inputs and calls to the simulated_expensive_calculation function
 
 #### Refactoring Using Functions
-- Example 
+- Example as [Listing 13-4: Extracting the calls to simulated_expensive_calculation to one place and storing the result in the expensive_result variable](./listings/_04/src/main.rs)
 
 #### Refactoring with Closures to Store Code
 - Example 
