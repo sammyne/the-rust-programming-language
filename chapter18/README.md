@@ -177,7 +177,7 @@ body in your implementation doesn’t need one of the parameters
 warning because that could be a bug
 - Sometimes it’s useful to create a variable you won’t use yet, such as when you’re prototyping or just starting a project
 - Tell Rust not to warn you about the unused variable by starting the name of the variable with an underscore
-    - Example as [Listing 18-20: Starting a variable name with an underscore to avoid getting unused variable warnings]
+    - Example as [Listing 18-20: Starting a variable name with an underscore to avoid getting unused variable warnings](./listings/_20/src/main.rs)
 - The syntax `_x` still binds the value to the variable, whereas `_` doesn’t bind at all
     - Examples 
       - Listing 18-21: An unused variable starting with an underscore still binds the value, which might take ownership of the value
