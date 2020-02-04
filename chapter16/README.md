@@ -31,7 +31,7 @@ features that run these independent parts are called *threads*.
 
 ### Creating a New Thread with `spawn`
 - To create a new thread, we call the `thread::spawn` function and pass it a closure containing the code we want to run in the new thread
-- Example as @TODO
+- Example as [Listing 16-1: Creating a new thread to print one thing while the main thread prints something else](./listings/_01/src/main.rs)
     >  The calls to `thread::sleep` force a thread to stop its execution for a short duration, allowing a different thread to run
 
 ### Waiting for All Threads to Finish Using `join` Handles
