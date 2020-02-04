@@ -170,7 +170,7 @@ body in your implementation doesn’t need one of the parameters
 #### Ignoring Parts of a Value with a Nested `_`
 - Example as [Listing 18-18: Using an underscore within patterns that match `Some` variants when we don’t need to use the value inside the `Some`](./listings/_18/src/main.rs)
 - We can also use underscores in multiple places within one pattern to ignore particular values
-    - Example as [Listing 18-19: Ignoring multiple parts of a tuple]
+    - Example as [Listing 18-19: Ignoring multiple parts of a tuple](./listings/_19/src/main.rs)
 
 #### Ignoring an Unused Variable by Starting Its Name with `_`
 - If you create a variable but don’t use it anywhere, Rust will usually issue a
