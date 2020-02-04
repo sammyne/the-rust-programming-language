@@ -144,7 +144,7 @@ which Rust can tell if a range is empty or not are `char` and numeric values
 rather than creating variables for all the fields. Doing so allows us to test
 some of the fields for particular values while creating variables to
 destructure the other fields
-    - Example as [Listing 18-14: Destructuring and matching literal values in one pattern]
+    - Example as [Listing 18-14: Destructuring and matching literal values in one pattern](./listings/_14/src/main.rs)
 
 #### Destructuring Enums
 - The pattern to destructure an enum should correspond to the way the data stored within the enum is defined
