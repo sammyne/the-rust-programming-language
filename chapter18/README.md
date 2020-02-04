@@ -200,7 +200,7 @@ arm to be chosen
     - Example as [Listing 18-27: Using a match guard to test for equality with an outer variable](./listings/_27/src/main.rs)
 - You can also use the *or* operator `|` in a match guard to specify multiple
 patterns; the match guard condition will apply to all the patterns
-    - Example as [Listing 18-28: Combining multiple patterns with a match guard]
+    - Example as [Listing 18-28: Combining multiple patterns with a match guard](./listings/_28/src/main.rs)
 
 ### `@` Bindings
 - The *at* operator (`@`) lets us create a variable that holds a value at the
