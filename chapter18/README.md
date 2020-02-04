@@ -189,7 +189,7 @@ warning because that could be a bug
 - The syntax `..` will expand to as many values as it needs to be
   - Example as [Listing 18-24: Matching only the first and last values in a tuple and ignoring all other values](./listings/_24/src/main.rs)
 - Using `..` must be unambiguous
-    - Failed example as [Listing 18-25: An attempt to use `..` in an ambiguous way]
+    - Failed example as [Listing 18-25: An attempt to use `..` in an ambiguous way](./listings/_25/src/main.rs)
 
 ### Extra Conditionals with Match Guards
 - A *match guard* is an additional `if` condition specified after the pattern in
