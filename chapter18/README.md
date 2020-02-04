@@ -168,7 +168,7 @@ body in your implementation doesn’t need one of the parameters
 - The compiler will then not warn about unused function parameters, as it would if you used a name instead
 
 #### Ignoring Parts of a Value with a Nested `_`
-- Example as [Listing 18-18: Using an underscore within patterns that match `Some` variants when we don’t need to use the value inside the `Some`]
+- Example as [Listing 18-18: Using an underscore within patterns that match `Some` variants when we don’t need to use the value inside the `Some`](./listings/_18/src/main.rs)
 - We can also use underscores in multiple places within one pattern to ignore particular values
     - Example as [Listing 18-19: Ignoring multiple parts of a tuple]
 
