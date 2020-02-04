@@ -6,7 +6,10 @@ arguments to other functions
 - Closures can capture values from the scope in which they’re defined
 
 ### Creating an Abstraction of Behavior with Closures
-- Examples as 13-[1-3]
+- Examples as [_01_03](./listings/_01_03/src/main.rs)
+    - Listing 13-1: A function to stand in for a hypothetical calculation that takes about 2 seconds to run
+    - Listing 13-2: A main function with hardcoded values to simulate user input and random number generation
+    - Listing 13-3: The business logic that prints the workout plans based on the inputs and calls to the simulated_expensive_calculation function
 
 #### Refactoring Using Functions
 - Example 
