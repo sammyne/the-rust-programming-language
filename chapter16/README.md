@@ -90,7 +90,7 @@ one thread to access some data at any given time
     - The smart pointer also has a `Drop` implementation that releases the lock automatically when a `MutexGuard` goes out of scope, which happens at the end of the inner scope
 
 #### Sharing a `Mutex<T>` Between Multiple Threads
-- Bad example
+- Bad example as [Listing 16-13: Ten threads each increment a counter guarded by a `Mutex<T>`](./listings/_13/src/main.rs)
 
 #### Multiple Ownership with Multiple Threads
 - Example
