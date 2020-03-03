@@ -2,6 +2,7 @@
 
 ## Installation
 - Tool: `rustup`, a command line tool for managing Rust versions and associated tools
+
 ### Installing rustup on Linux or macOS
 - Execute following command in terminal
     ```bash
@@ -22,7 +23,7 @@
 > Some common Rust packages depend on C code and will need a C compiler
 
 ### Installing rustup on Windows 
-- Go to [https://www.rust-lang.org/tools/install][install] and follow the instructions for
+- Go to [Install Rust](https://www.rust-lang.org/tools/install) and follow the instructions for
     installing Rust
 
 ### Updating and Uninstalling 
@@ -70,7 +71,7 @@
         println!("Hello, world");
     }
     ```
-    The full project goes as [hello_world](./hello_world)
+    The full project goes as [hello_world](./hello_world/main.rs)
 - `rustfmt` can format your code in a particular style
 
 ### Compiling and Running Are Separate Steps
