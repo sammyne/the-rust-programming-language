@@ -14,5 +14,5 @@
 - [ ] Chapter 17. Object-oriented programming features of rust
     - todo
       - link README.md to commits
-- [x] Chapter 18. Patterns and Matching
+- [x] Chapter 18. Patterns and Matching (03/18)
 - [ ] Chapter 19. Advanced Features
