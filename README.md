@@ -11,8 +11,7 @@
 - [x] Chapter 12. An I/O Project: Building a Command Line Program
 - [x] Chapter 13. Functional Language Features: Iterators and Closures
 - [ ] Chapter 16. Fearless Concurrency  
-- [ ] Chapter 17. Object-oriented programming features of rust
-    - todo
-      - link README.md to commits
+- [x] Chapter 17. Object-oriented programming features of rust
+    - todo: rearrange listing 01-11
 - [x] Chapter 18. Patterns and Matching (03/18)
 - [ ] Chapter 19. Advanced Features
