@@ -84,6 +84,9 @@ see [Listing 17-12: Definition of a Post struct and a new function that creates 
 see [Listing 17-13: Implementing the `add_text` method to add text to a post’s `content`](./listinngs/_13/src/lib.rs)
 
 ### Ensuring the Content of a Draft Post Is Empty 
+
+see [Listing 17-14: Adding a placeholder implementation for the content method on Post that always returns an empty string slice](./listings/../listinngs/_14/src/lib.rs)
+
 ### Requesting a Review of the Post Changes Its State
 - Example code 
     ```rust
