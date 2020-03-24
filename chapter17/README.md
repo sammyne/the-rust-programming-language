@@ -92,7 +92,9 @@ see [Listing 17-14: Adding a placeholder implementation for the content method o
 - Note: rather than having `self`, `&self`, or `&mut self` as the first parameter of the method, we have self: `Box<Self>`. This syntax means the method is only valid when called on a `Box` holding the type
 
 ### Adding the approve Method that Changes the Behavior of content 
-see [Listing 17-16: Implementing the approve method on Post and the State trait](./listinngs/_16/src/lib.rs)
+- Examples
+  - [Listing 17-16: Implementing the approve method on Post and the State trait](./listinngs/_16/src/lib.rs)
+  - [Listing 17-17: Updating the content method on Post to delegate to a content method on State](./listinngs/_17/src/lib.rs)
 
 ### Trade-offs of the State Pattern 
 - To see the simplicity of maintaining code that uses the state pattern, try a few of these suggestions:
