@@ -88,34 +88,9 @@ see [Listing 17-13: Implementing the `add_text` method to add text to a post’s
 see [Listing 17-14: Adding a placeholder implementation for the content method on Post that always returns an empty string slice](./listings/../listinngs/_14/src/lib.rs)
 
 ### Requesting a Review of the Post Changes Its State
-- Example code 
-    ```rust
-    impl Post {
-        // --snip--
-        pub fn request_review(&mut self) {
-            // We need to set state to None temporarily rather than setting it directly with code 
-            // like self.state = self.state.request_review(); to get ownership of the state value. 
-            // This ensures Post can’t use the old state value after we’ve transformed it into a 
-            // new state.
-            if let Some(s) = self.state.take() {
-                self.state = Some(s.request_review())
-            }
-        }
-    }
-
-    trait State {
-        fn request_review(self: Box<Self>) -> Box<dyn State>;
-    }
-
-    struct PendingReview {}
-
-    impl State for PendingReview {
-        fn request_review(self: Box<Self>) -> Box<dyn State> {
-            self
-        }
-    }
-    ```
+- Example code as [Listing 17-15: Implementing request_review methods on Post and the State trait](./listings/../listinngs/_15/src/lib.rs)
 - Note: rather than having `self`, `&self`, or `&mut self` as the first parameter of the method, we have self: `Box<Self>`. This syntax means the method is only valid when called on a `Box` holding the type
+
 ### Adding the approve Method that Changes the Behavior of content 
 see listing 17-16 @TODO commitID
 ### Trade-offs of the State Pattern 
