@@ -95,6 +95,7 @@ see [Listing 17-14: Adding a placeholder implementation for the content method o
 - Examples
   - [Listing 17-16: Implementing the approve method on Post and the State trait](./listinngs/_16/src/lib.rs)
   - [Listing 17-17: Updating the content method on Post to delegate to a content method on State](./listinngs/_17/src/lib.rs)
+  - [Listing 17-18: Adding the content method to the State trait](./listinngs/_18/src/lib.rs)
 
 ### Trade-offs of the State Pattern 
 - To see the simplicity of maintaining code that uses the state pattern, try a few of these suggestions:
