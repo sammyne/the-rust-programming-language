@@ -6,7 +6,7 @@
   - encapsulation
   - inheritance
 ### Objects Contain Data and Behavior 
-> Object-oriented programs are made up of objects. An object packages both data and the procedures that operate on that data. The procedures are typically called methods or operations. -- The Gang of Four
+> Object-oriented programs are made up of objects. An object packages both **data** and the **procedures** that operate on that data. The procedures are typically called methods or operations. -- The Gang of Four
 ### Encapsulation That Hides Implementation Details 
 - **WHAT**: The implementation details of an object aren't accessible to code using that object    
   - The only way to interact with an object is through its public API
@@ -21,8 +21,8 @@
   - Code usability, which can be implemented with default trait method in Rust
   - Polymorphism: to enable a child type to be used in the same places as the parent type
     > Rust achieves bounded parametric polymorphism 
-    >   - Generics to abstract over different possible types 
-    >   - Trait bounds to impose constraints on what those types must provide
+    >   - **Generics** to abstract over different possible types 
+    >   - **Trait bounds** to impose constraints on what those types must provide
 
 ## Using Trait Objects That Allow for Values of Different Types 
 - Use case: An example graphical user interface (GUI) tool that iterates through a list of items, calling a `draw` method on each one to draw it to the screen
@@ -35,7 +35,7 @@
 - **HOW**: We create a trait object by specifying some sort of pointer, such as a `&` reference or a `Box<T>` smart pointer, then the `dyn` keyword, and then specifying the relevant trait
 - Restriction: trait object can hold no data
 - A **generic type parameter** can only be substituted with one concrete type at a time, whereas **trait objects** allow for multiple concrete types to fill in for the trait object at runtime
-- Example as [`Draw`](./gui/src/lib.rs)
+- Example as [`Draw`](./gui/src/bin/main.rs)
 
 ### Implementing the Trait 
 > Being concerned only with the messages a value responds to rather than the value's concrete type -— is similar to the concept duck typing in dynamically typed languages
@@ -78,7 +78,8 @@
     4. Only published blog posts return content to print, so unapproved posts can't accidentally be published.
 
 ### Defining Post and Creating a New Instance in the Draft State
-see listing 17-12
+see [Listing 17-12: Definition of a Post struct and a new function that creates a new Post instance, a State trait, and a Draft struct](./listinngs/_12/src/lib.rs)
+
 ### Storing the Text of the Post Content 
 see listing 17-13
 ### Ensuring the Content of a Draft Post Is Empty 
