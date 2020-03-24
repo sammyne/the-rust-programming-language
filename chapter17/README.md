@@ -113,6 +113,7 @@ see [Listing 17-14: Adding a placeholder implementation for the content method o
 #### Implementing Transitions as Transformations into Different Types
 - Example codes 
   - [Listing 17-20: A PendingReviewPost that gets created by calling request_review on DraftPost and an approve method that turns a PendingReviewPost into a published Post](./listings/_20/src/lib.rs)
+  - [Listing 17-21: Modifications to main to use the new implementation of the blog post workflow](./listings/_21/src/main.rs)
 - Our gain is that invalid states are now impossible because of the type system and the type checking that happens at compile time
 - Rust is capable of implementing object-oriented design patterns, other patterns, such as encoding state into the type system, are also available in Rust.
 - Object-oriented patterns won't always be the best solution in Rust due to certain features, like ownership, that object-oriented languages don't have
