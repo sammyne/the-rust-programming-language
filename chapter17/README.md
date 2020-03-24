@@ -99,7 +99,7 @@ see [Listing 17-14: Adding a placeholder implementation for the content method o
 
 ### Trade-offs of the State Pattern 
 - To see the simplicity of maintaining code that uses the state pattern, try a few of these suggestions:
-    - Add a reject method that changes the post's state from `PendingReview` back to `Draft`.
+    - Add a `reject` method that changes the post's state from `PendingReview` back to `Draft`.
     - Require two calls to `approve` before the state can be changed to `Published`.
     - Allow users to add text content only when a post is in the `Draft` state. Hint: have the state object responsible for what might change about the content but not responsible for modifying the `Post`.
 - 2 downsides of the state pattern 
@@ -107,7 +107,12 @@ see [Listing 17-14: Adding a placeholder implementation for the content method o
     - We've duplicated some logic
 
 #### Encoding States and Behavior as Types
+- Remove the `content` method from draft post
+  - Example as [Listing 17-19: A Post with a content method and a DraftPost without a content method](./listings/_19/src/lib.rs) 
+
 #### Implementing Transitions as Transformations into Different Types
+- Example codes 
+  - [Listing 17-20: A PendingReviewPost that gets created by calling request_review on DraftPost and an approve method that turns a PendingReviewPost into a published Post](./listings/_20/src/lib.rs)
 - Our gain is that invalid states are now impossible because of the type system and the type checking that happens at compile time
 - Rust is capable of implementing object-oriented design patterns, other patterns, such as encoding state into the type system, are also available in Rust.
 - Object-oriented patterns won't always be the best solution in Rust due to certain features, like ownership, that object-oriented languages don't have
