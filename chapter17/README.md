@@ -81,7 +81,8 @@
 see [Listing 17-12: Definition of a Post struct and a new function that creates a new Post instance, a State trait, and a Draft struct](./listinngs/_12/src/lib.rs)
 
 ### Storing the Text of the Post Content 
-see listing 17-13
+see [Listing 17-13: Implementing the `add_text` method to add text to a post’s `content`](./listinngs/_13/src/lib.rs)
+
 ### Ensuring the Content of a Draft Post Is Empty 
 ### Requesting a Review of the Post Changes Its State
 - Example code 
