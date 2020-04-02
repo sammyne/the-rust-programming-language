@@ -10,7 +10,7 @@
 - [x] Chapter 11. Writing Automated Tests
 - [x] Chapter 12. An I/O Project: Building a Command Line Program
 - [x] Chapter 13. Functional Language Features: Iterators and Closures
-- [ ] Chapter 16. Fearless Concurrency  
+- [x] Chapter 16. Fearless Concurrency  
 - [x] Chapter 17. Object-oriented programming features of rust
     - todo: rearrange listing 01-11
 - [x] Chapter 18. Patterns and Matching (03/18)
