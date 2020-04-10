@@ -25,15 +25,28 @@
 ### Enabling Recursive Types with Boxes
 - One type whose size can’t be known at compile time is a *recursive type*, where a value can have as part of itself another value of the same type
 - Example: cons list
+  - Failed as [Listing 02-03](./listings/_02_03/src/main.rs)
+    - Listing 15-2: The first attempt at defining an enum to represent a cons list data structure of i32 values
+    - Listing 15-3: Using the List enum to store the list 1, 2, 3
+  - Ok: [Listing 15-5: Definition of List that uses Box<T> in order to have a known size](./listings/_05/src/main.rs)
 #### More Information About the Cons List
 - Each item in a cons list contains two elements: the value of the current item and the next item. The last item in the list contains only a value called `Nil` without a next item
 
 #### Computing the Size of a Non-Recursive Type
 - To determine how much space to allocate for a `Message` value, Rust goes through each of the variants to see which variant needs the most space
 
+  ```rust
+  enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+  }
+  ```
+
 #### Using `Box<T>` to Get a Recursive Type with a Known Size
 - The `Box<T>` type is a smart pointer because it implements the `Deref` trait, which allows `Box<T>` values to be treated like references
-- When a `Box<T>` value goes out of scope, the heap data that the box is pointing to is cleaned up as well because of the `Drop` trait implementation
+- When a `Box<T>` value goes out of scope, the heap data that the box is pointing to is cleaned up because of the `Drop` trait implementation
 
 ## Treating Smart Pointers Like Regular References with the `Deref` Trait
 - Implementing the `Deref` trait allows you to customize the behavior of the *dereference operator*, `*`
@@ -78,25 +91,24 @@
 - Example as [Listing 15-14: A CustomSmartPointer struct that implements the Drop trait where we would put our cleanup code](listings/_14/src/main.rs)
 
 ### Dropping a Value Early with `std::mem::drop`
-- Rust doesn’t let you call the `Drop` trait’s `drop` method manually
+- Rust doesn't let you call the `Drop` trait’s `drop` method manually
 - You have to call the `std::mem::drop` function provided by the standard library if you want to force a value to be dropped before the end of its scope
     - Example as [Listing 15-16: Calling std::mem::drop to explicitly drop a value before it goes out of scope](./listings/_16/src/main.rs)
-- Rust doesn’t let us call `drop` explicitly because Rust would still automatically call `drop` on the value at the end of `main`. This would be a *double free* error because Rust would be trying to clean up the same value twice
+- Rust doesn't let us call `drop` explicitly because Rust would still automatically call `drop` on the value at the end of `main`. This would be a *double free* error because Rust would be trying to clean up the same value twice
     - Example as [Listing 15-15: Attempting to call the drop method from the Drop trait manually to clean up early](listings/_15/src/main.rs)
 - `std::mem::drop` is in the prelude
 
 ## `Rc<T>`, the Reference Counted Smart Pointer
 - The `Rc<T>` type keeps track of the number of references to a value which determines whether or not a value is still in use. If there are zero references to a value, the value can be cleaned up without any references becoming invalid
-- We use the `Rc<T>` type when we want to allocate some data on the heap for multiple parts of our program to read and we can’t determine at compile time which part will finish using the data last
-- `Rc<T>` is only for use in single-threaded scenarios
+- **WHEN**: we want to allocate some data on the heap for multiple parts of our program to read and we can't determine at compile time which part will finish using the data last
+- `Rc<T>` is **ONLY** for use in single-threaded scenarios
 
 ### Using `Rc<T>` to Share Data
-- Every time we call `Rc::clone`, the reference count to the data within the `Rc<List>` will increase, and the data won’t be cleaned up unless there are zero references to it
-- We could have called `a.clone()` rather than `Rc::clone(&a)`, but Rust’s convention is to use `Rc::clone` in this case. The implementation of `Rc::clone` doesn’t make a deep copy of all the data like most types’ implementations of `clone` do. The call to `Rc::clone` only increments the reference count, which doesn’t take much time
+- Every time we call `Rc::clone`, the reference count to the data within the `Rc<List>` will increase, and the data won't be cleaned up unless there are zero references to it
+- We could have called `a.clone()` rather than `Rc::clone(&a)`, but Rust's convention is to use `Rc::clone` in this case. The implementation of `Rc::clone` doesn't make a deep copy of all the data like most types' implementations of `clone` do. The call to `Rc::clone` only increments the reference count, which doesn't take much time
 - Examples
-  - [Listing 15-17: Demonstrating we’re not allowed to have two lists using `Box<T>` that try to share ownership of a third list](./listings/_17/src/main.rs)
+  - [Listing 15-17: Demonstrating we're not allowed to have two lists using `Box<T>` that try to share ownership of a third list](./listings/_17/src/main.rs)
   - [Listing 15-18: A definition of List that uses `Rc<T>`](./listings/_18/src/main.rs)
-
 
 ### Cloning an `Rc<T>` Increases the Reference Count
 - The `Rc::strong_count` function returns the reference count of `Rc<T>`
@@ -106,13 +118,13 @@
 ## `RefCell<T>` and the Interior Mutability Pattern
 - *Interior mutability* is a design pattern in Rust that allows you to mutate data even when there are immutable references to that data
 - To mutate data, the pattern uses `unsafe` code inside a data structure to bend Rust’s usual rules that govern mutation and borrowing
-- We can use types that use the interior mutability pattern when we can ensure that the borrowing rules will be followed at runtime, even though the compiler can’t guarantee that
+- We can use types that use the interior mutability pattern when we can ensure that the borrowing rules will be followed at runtime, even though the compiler can't guarantee that
 
 ### Enforcing Borrowing Rules at Runtime with `RefCell<T>`
-- With references and `Box<T>`, the borrowing rules’ invariants are enforced at compile time. With `RefCell<T>`, these invariants are enforced *at runtime*
-- With references, if you break these rules, you’ll get a compiler error. With `RefCell<T>`, if you break these rules, your program will panic and exit
+- With references and `Box<T>`, the borrowing rules' invariants are enforced at compile time. With `RefCell<T>`, these invariants are enforced *at runtime*
+- With references, if you break these rules, you'll get a compiler error. With `RefCell<T>`, if you break these rules, your program will panic and exit
 - The advantage of checking the borrowing rules at runtime instead is that certain memory-safe scenarios are then allowed, whereas they are disallowed by the compile-time checks
-- `RefCell<T>` is only for use in single-threaded scenarios
+- `RefCell<T>` is **ONLY** for use in single-threaded scenarios
 - A recap of the reasons to choose `Box<T>`, `Rc<T>`, or `RefCell<T>`:
     * `Rc<T>` enables multiple owners of the same data; `Box<T>` and `RefCell<T>`
     have single owners.
@@ -131,16 +143,16 @@ that record what happens during a test so you can assert that the correct
 actions took place
 - Examples as [listing](./listings/_20_21_22/src/main.rs)
   - Listing 15-20: A library to keep track of how close a value is to a maximum value and warn when the value is at certain levels
-  - Listing 15-21: An attempt to implement a MockMessenger that isn’t allowed by the borrow checker
+  - Listing 15-21: An attempt to implement a MockMessenger that isn't allowed by the borrow checker
   - Ok as Listing 15-22: Using `RefCell<T>` to mutate an inner value while the outer value is considered immutable
 
 #### Keeping Track of Borrows at Runtime with `RefCell<T>`
 - `RefCell<T>` lets us have many immutable borrows or one mutable borrow at any point in time
-- Example as [Listing 15-23: Creating two mutable references in the same scope to see that RefCell<T> will panic](./listings/_23/src/main.rs)
+- Example as [Listing 15-23: Creating two mutable references in the same scope to see that RefCell<T> will panic](./listings/_23/src/lib.rs)
 
 ### Having Multiple Owners of Mutable Data by Combining `Rc<T>` and `RefCell<T>`
 - If you have an `Rc<T>` that holds a `RefCell<T>`, you can get a value that can have multiple owners *and* that you can mutate
-- Because `Rc<T>` holds only immutable values, we can’t change any of the values in the list once we’ve created them
+- Because `Rc<T>` holds only immutable values, we can't change any of the values in the list once we've created them
 - Example as [Listing 15-24: Using `Rc<RefCell<i32>>` to create a List that we can mutate](./listings/_24/src/main.rs)
 
 ## Reference Cycles Can Leak Memory
@@ -151,13 +163,13 @@ actions took place
 - Another solution for avoiding reference cycles is reorganizing your data
 structures so that some references express ownership and some references don’t
 - Examples 
-  - [Listing 15-25: A cons list definition that holds a `RefCell<T>` so we can modify what a Cons variant is referring to](./listings/_25/src/main.rs)
+  - [Listing 15-25: A cons list definition that holds a `RefCell<T>` so we can modify what a Cons variant is referring to](./listings/_25/src/lib.rs)
   - [Listing 15-26: Creating a reference cycle of two List values pointing to each other](./listings/_26/src/main.rs)
 
 ### Preventing Reference Cycles: Turning an `Rc<T>` into a `Weak<T>`
 - Create a *weak reference* to the value within an `Rc<T>` instance by calling `Rc::downgrade` and passing a reference to the `Rc<T>`. When you call `Rc::downgrade`, you get a smart pointer of type `Weak<T>`
-- The difference is the `weak_count` doesn’t need to be 0 for the `Rc<T>` instance to be cleaned up
-- They won’t cause a reference cycle because any cycle involving some weak references will be broken once the strong reference count of values involved is 0
+- The difference is the `weak_count` doesn't need to be 0 for the `Rc<T>` instance to be cleaned up
+- They won't cause a reference cycle because any cycle involving some weak references will be broken once the strong reference count of values involved is 0
 - You must make sure the value still exists. Do this by calling the `upgrade` method on a `Weak<T>` instance, which will return an `Option<Rc<T>>`. You’ll get a result of `Some` if the `Rc<T>` value has not been dropped yet and a result of `None` if the `Rc<T>` value has been dropped
 
 #### Creating a Tree Data Structure: a `Node` with Child Nodes
