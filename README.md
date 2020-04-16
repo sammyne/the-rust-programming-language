@@ -10,6 +10,7 @@
 - [x] Chapter 11. Writing Automated Tests
 - [x] Chapter 12. An I/O Project: Building a Command Line Program
 - [x] Chapter 13. Functional Language Features: Iterators and Closures
+- [ ] Chapter 14. More About Cargo and Crates.io
 - [x] Chapter 15. Smart Pointers
 - [x] Chapter 16. Fearless Concurrency  
 - [x] Chapter 17. Object-oriented programming features of rust
