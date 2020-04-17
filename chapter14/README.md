@@ -41,7 +41,7 @@ has a large module hierarchy.
       - Listing 14-3: An `art` library with items organized into `kinds` and `utils` modules
       - Listing 14-4: A crate using the `art` crate's items with its internal structure exported
 - **HOW**: re-export items to make a public structure that's different from your private structure by using `pub use`
-    - Example code as [listing 05-06]()
+    - Example code as [listing 05-06](./listings/_05_06/src/lib.rs)
       - Listing 14-5: Adding `pub use` statements to re-export items
       - Listing 14-6: A program using the re-exported items from the `art` crate
 - Choosing `pub use` gives you flexibility in how you structure your crate internally and decouples that internal structure from what you present to your users
