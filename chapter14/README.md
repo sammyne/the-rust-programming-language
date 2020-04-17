@@ -76,11 +76,13 @@ to start depending on a version again
 
 ## Cargo Workspaces
 - **WHEN**: The library crate continues to get bigger and you want to split up your package further into multiple library crates
+
 ### Creating a Workspace
 - A *workspace* is a set of packages that share the same *Cargo.lock* and output
 directory
 - By sharing one *target* directory, the crates can avoid unnecessary rebuilding
-- Example as [adder]()
+- Example as [adder](./listings/add/Cargo.toml)
+
 ### Creating the Second Crate in the Workspace
 - Example as [Listing 14-7: Using the add-one library crate from the adder crate]()
 
