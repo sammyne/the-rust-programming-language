@@ -12,7 +12,7 @@
 displays the contents of documentation comments for public API items intended
 for programmers interested in knowing how to *use* your crate as opposed to how
 your crate is *implemented*
-    - TODO: [Listing 14-1: A documentation comment for a function]()
+    - [Listing 14-1: A documentation comment for a function](./listings/_01/src/main.rs)
 
 #### Commonly Used Sections
 - Examples
