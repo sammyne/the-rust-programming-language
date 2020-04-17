@@ -84,7 +84,7 @@ directory
 - Example as [adder](./listings/add/Cargo.toml)
 
 ### Creating the Second Crate in the Workspace
-- Example as [Listing 14-7: Using the add-one library crate from the adder crate]()
+- Example as [Listing 14-7: Using the add-one library crate from the adder crate](./listings/_07/src/main.rs)
 
 #### Depending on an External Crate in a Workspace
 - Even though `rand` is used somewhere in the workspace, we can’t use it in other crates in the workspace unless we add `rand` to their *Cargo.toml* files as well
