@@ -15,7 +15,7 @@ your crate is *implemented*
     - [Listing 14-1: A documentation comment for a function](./listings/_01/src/main.rs)
 
 #### Commonly Used Sections
-- Examples
+- **Examples**
 - **Panics**: The scenarios in which the function being documented could panic
 - **Errors**: If the function returns a `Result`, describing the kinds of
   errors that might occur and what conditions might cause those errors to be
@@ -37,7 +37,7 @@ your crate is *implemented*
 crate. People who use your crate are less familiar with the structure than you
 are and might have difficulty finding the pieces they want to use if your crate
 has a large module hierarchy.
-    - Example as [listing 03-04]()
+    - Example as [listing 03-04](./listings/_03_04/src/main.rs)
       - Listing 14-3: An `art` library with items organized into `kinds` and `utils` modules
       - Listing 14-4: A crate using the `art` crate's items with its internal structure exported
 - **HOW**: re-export items to make a public structure that's different from your private structure by using `pub use`
