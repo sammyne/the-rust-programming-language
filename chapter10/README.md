@@ -15,7 +15,7 @@
 ### In Function Definitions 
 - When defining a function that uses generics, we place the generics in the signature of the function where we would usually specify the data types of the parameters and return value 
 - Example without generic：[Listing 10-4: Two functions that differ only in their names and the types in their signatures](./listings/_04/src/main.rs)
-- Example with generic：[Listing 10-5: A definition of the largest function that uses generic type parameters but doesn’t compile yet](listings/_05/src/main.rs)
+- Example with generic：[Listing 10-5: A definition of the largest function that uses generic type parameters but doesn't compile yet](listings/_05/src/main.rs)
 
 ### In Struct Definitions 
 
@@ -41,7 +41,7 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
 > When you recognize situations in your code with multiple struct or enum definitions that differ only in the types of the values they hold, you can avoid duplication by using generic types instead
 
 ### In Method Definitions
-- Example as [Listing 10-9: Implementing a method named x on the Point<T> struct that will return areference to the x field of type T](./listings/_09/src/main.rs)
+- Example as [Listing 10-9: Implementing a method named `x` on the Point<T> struct that will return a reference to the `x` field of type T](./listings/_09/src/main.rs)
 - Example of implement methods only on `Point<f32>` instances rather than on `Point<T>` instances with any generic type
     ```rust
     // Listing 10-10: An impl block that only applies to a struct with a particular concrete type
@@ -52,7 +52,7 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
         }
     }
     ```
-- Generic type parameters in a struct definition aren't always the same as those you use in that struct's method signatures as [Listing 10-11: A method that uses different generic types than its struct’s definition](./listings/_11/src/main.rs)
+- Generic type parameters in a struct definition aren't always the same as those you use in that struct's method signatures as [Listing 10-11: A method that uses different generic types than its struct's definition](./listings/_11/src/main.rs)
 
 ### Performance of Code Using Generics 
 - No penalty w.r.t that with concrete types
@@ -81,14 +81,14 @@ Example as [Listing 10-6 to 10-8](./listings/_06_07_08/src/main.rs)
   - Each line ends in a semicolon
 
 ### Implementing a Trait on a Type
-- Example as [Listing 10-13: Implementing the Summary trait on the NewsArticle and Tweet types](./listings/_13/src/main.rs)
+- Example as [Listing 10-13: Implementing the `Summary` trait on the `NewsArticle` and `Tweet` types](./listings/_13/src/main.rs)
 - One restriction 
   - A trait can be implemented on a type **only if either the trait or the type is local to our crate**
-    > This restriction is part of a property of programs called **coherence** (a.k.a. **the orphan rule**), which ensures that other people's code can't break your code and vice versa. Without the rule, two crates could implement the same trait for the same type, and Rust wouldn’t know which implementation to use
+    > This restriction is part of a property of programs called **coherence** (a.k.a. **the orphan rule**), which ensures that other people's code can't break your code and vice versa. Without the rule, two crates could implement the same trait for the same type, and Rust wouldn't know which implementation to use
 ### Default Implementations 
 - Why: offering default implementations in trait makes it optional to override if we're comfortable with the default one
-- Example as [Listing 10-14: Definition of a Summary trait with a default implementation of the summarize method](./listings/_14/src/main.rs)
-- Default implementations can call other methods in the same trait, even if those other methods don’t have a default implementation
+- Example as [Listing 10-14: Definition of a `Summary` trait with a default implementation of the `summarize` method](./listings/_14/src/main.rs)
+- Default implementations can call other methods in the same trait, even if those other methods don't have a default implementation
     - Example as [Listing 10-14-2](./listings/_14_2/src/main.rs)
 - Restriction: it is impossible to call the default implementation from an overriding implementation of that same method
 ### Traits as Parameters 
@@ -128,20 +128,20 @@ pub fn notify<T: Summary + Display>(item: T) {
 #### Clearer Trait Bounds with `where` Clauses
 - Why: functions with multiple generic type parameters can contain lots of trait bound information between the function's name and its parameter list, making the function signature hard to read
 - `where` clause goes as 
-```rust
-fn some_function<T, U>(t: T, u: U) -> i32
-    where 
-        T: Display + Clone,
-        U: Clone + Debug
-{
-    ...
-}
+    ```rust
+    fn some_function<T, U>(t: T, u: U) -> i32
+        where 
+            T: Display + Clone,
+            U: Clone + Debug
+    {
+        ...
+    }
 
-// which is equivalent to 
-fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
-    ...
-}
-```
+    // which is equivalent to 
+    fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
+        ...
+    }
+    ```
 
 ### Returning Types that Implement Traits
 - Only for returning a single type
@@ -173,13 +173,13 @@ fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
 ### Fixing the `largest` Function with Trait Bounds
 - Cause
   - Types like `i32` and `char` that have a known size can be stored on the stack, so they implement the `Copy` trait
-  - When we made the largest function generic, it became possible for the list parameter to have types in it that don't implement the `Copy` trait
-- Fix as [Listing 10-15: A working definition of the largest function that works on any generic type that implements the PartialOrd and Copy traits](./listings/_15/src/main.rs)
+  - When we made the `largest` function generic, it became possible for the list parameter to have types in it that don't implement the `Copy` trait
+- Fix [Listing 10-05](./listings/_05/src/main.rs) as [Listing 10-15: A working definition of the `largest` function that works on any generic type that implements the `PartialOrd` and `Copy` traits](./listings/_15/src/main.rs)
 - Alternative solutions
   - Replace `Copy` with `Clone`, which would iccur more heap allocations
   - Return a reference to a `T` value in the slice
 ### Using Trait Bounds to Conditionally Implement Methods
-- Example as [Listing 10-16: Conditionally implement methods on a generic type depending on trait bounds](listings/_16/src/main.rs)
+- Example as [Listing 10-16: Conditionally implement methods on a generic type depending on trait bounds](listings/_16/src/lib.rs)
 - Blanket implementations: implementating a trait on any type that satisfies the trait bounds
     ```rust
     // std library
@@ -234,10 +234,10 @@ fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
         ```
 
 ### Generic Lifetimes in Functions 
-- Non-compilable example：[Listing 10-21: A main function that calls the longest function to find the longer of two string slices](listings/_20/src/main.rs)
+- Non-compilable example：[Listing 10-21: A main function that calls the `longest` function to find the longer of two string slices](./listings/_20/src/main.rs)
 
 ### Lifetime Annotation Syntax 
-- Lifetime annotations don't change how long any of the references live
+- Lifetime annotations **DON'T** change how long any of the references live
 - Lifetime annotations describe the relationships of the lifetimes of multiple references to each other without affecting the lifetimes
 - Syntax: the names of lifetime parameters must start with a single quote (`'`) and are usually all lowercase and very short, like generic types, usually as `'a`
 - We place lifetime parameter annotations after the `&` of a reference, using a space to separate the annotation from the reference's type
@@ -247,12 +247,12 @@ fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {
     &'a mut i32 // a mutable reference with an explicit lifetime
     ```
 ### Lifetime Annotations in Function Signatures
-- Example as [Listing 10-22: The longest function definition specifying that all the references in the signature must have the same lifetime 'a](./listings/_22/src/lib.rs)
+- Example as [Listing 10-22: The `longest` function definition specifying that all the references in the signature must have the same lifetime `'a`](./listings/_22/src/lib.rs)
 - When annotating lifetimes in functions, the annotations go in the function signature, not in the function body. Rust can analyze the code within the function without any help
 - When a function has references to or from code outside that function, it becomes almost impossible for Rust to figure out the lifetimes of the parameters or return values on its own. The lifetimes might be different each time the function is called. This is why we need to annotate the lifetimes manually
 - Examples
-    - [Listing 10-23: Using the longest function with references to String values that have different concrete lifetimes](./listings/_23/src/main.rs)
-    - [Listing 10-24: Attempting to use result after string2 has gone out of scope](./listings/_24/src/main.rs)
+    - [Listing 10-23: Using the `longest` function with references to `String` values that have different concrete lifetimes](./listings/_23/src/main.rs)
+    - [Listing 10-24: Attempting to use result after `string2` has gone out of scope](./listings/_24/src/main.rs)
 
 ### Thinking in Terms of Lifetimes 
 ```rust
