@@ -7,6 +7,7 @@
 - [x] Chapter 06. Enums and Pattern Matching 
 - [ ] Chapter 07. Managing Growing Projects with Packages, Crates, and Modules
 - [x] Chapter 08. Common Collections
+- [x] [Chapter 09. Error Handling](./chapter09/README.md) (06/06)
 - [x] [Chapter 10. Generic types, traits, and lifetimes](./chapter10/README.md) (05/25)
 - [x] Chapter 11. Writing Automated Tests (05/23)
 - [x] Chapter 12. An I/O Project: Building a Command Line Program
