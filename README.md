@@ -5,7 +5,7 @@
 - [ ] Chapter 02. Programming a Guessing Game
 - [ ] Chapter 03. Common Programming Concepts  
 - [x] Chapter 06. Enums and Pattern Matching 
-- [ ] Chapter 07. Managing Growing Projects with Packages, Crates, and Modules
+- [x] [Chapter 07. Managing Growing Projects with Packages, Crates, and Modules](./chapter07/README.md) (06/14)
 - [x] [Chapter 08. Common Collections](./chapter08/README.md) (06/06)
 - [x] [Chapter 09. Error Handling](./chapter09/README.md) (06/06)
 - [x] [Chapter 10. Generic types, traits, and lifetimes](./chapter10/README.md) (05/25)
