@@ -4,7 +4,7 @@
 - [x] Chapter 01. Getting started
 - [ ] Chapter 02. Programming a Guessing Game
 - [ ] Chapter 03. Common Programming Concepts  
-- [x] Chapter 06. Enums and Pattern Matching 
+- [x] [Chapter 06. Enums and Pattern Matching](./chapter06/README.md) (06/20)
 - [x] [Chapter 07. Managing Growing Projects with Packages, Crates, and Modules](./chapter07/README.md) (06/14)
 - [x] [Chapter 08. Common Collections](./chapter08/README.md) (06/06)
 - [x] [Chapter 09. Error Handling](./chapter09/README.md) (06/06)
