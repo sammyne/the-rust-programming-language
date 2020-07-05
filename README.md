@@ -4,6 +4,7 @@
 - [x] Chapter 01. Getting started
 - [ ] Chapter 02. Programming a Guessing Game
 - [ ] Chapter 03. Common Programming Concepts  
+- [x] [Chapter 04. Understanding Ownership](./chapter04/README.md) (07/05)
 - [x] [Chapter 05. Using Structs to Structure Related Data](./chapter05/README.md) (06/27)
 - [x] [Chapter 06. Enums and Pattern Matching](./chapter06/README.md) (06/20)
 - [x] [Chapter 07. Managing Growing Projects with Packages, Crates, and Modules](./chapter07/README.md) (06/14)
