@@ -2,7 +2,7 @@
 
 ## Progress 
 - [x] Chapter 01. Getting started
-- [ ] Chapter 02. Programming a Guessing Game
+- [x] [Chapter 02. Programming a Guessing Game][./chapter02/README] (07/19)
 - [x] [Chapter 03. Common Programming Concepts](./chapter03/README.md) (07/10)
 - [x] [Chapter 04. Understanding Ownership](./chapter04/README.md) (07/05)
 - [x] [Chapter 05. Using Structs to Structure Related Data](./chapter05/README.md) (06/27)
