@@ -14,7 +14,7 @@
     ```bash
     Rust is installed now. Great!
     ```
-- The installation script automatically adds Rust to your system PATH **after your next login**.
+- The installation script automatically adds Rust to your system PATH **after your next login**
     To use Rust without restarting your terminal, run the manually:
     ```bash
     source $HOME/.cargo/env
@@ -56,7 +56,7 @@
 
 ### Writing and Running a Rust Program
 
-- Convention: If you’re using more than one word in your filename, use an underscore to separate
+- Convention: If you're using more than one word in your filename, use an underscore to separate
     them
 - Make a file named `main.rs` with content as 
     ```rust
@@ -79,13 +79,13 @@
 - Run with `./main # or .\main.exe on Windows`
 
 ## Hello, Cargo!
-- Cargo is Rust’s build system and package manager, capable of 
+- Cargo is Rust's build system and package manager, capable of 
   - building your code
   - downloading the libraries your code depends on
   - building those libraries
 
-> Because the vast majority of Rust projects use Cargo, the rest of this book assumes that you're
-> using Cargo too
+    > Because the vast majority of Rust projects use Cargo, the rest of this book assumes that you're
+    > using Cargo too
 
 - Check whether Cargo is installed with 
     ```bash
